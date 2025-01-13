@@ -2,8 +2,6 @@
 import socket
 import time
 import threading
-import base64
-import random as r
 
 import asyncio
 import websockets
@@ -61,7 +59,7 @@ class KeyboardPublisher(Node):
         self.mouseY = int(y)
     def update_key_states(self, binary_data):
         bitfield = int.from_bytes(binary_data, byteorder='big')
-        self.key_states = [char == '1' for char in input_string]
+        self.key_states = [char == '1' for char in binary_data]
         # for i in range(KEY_COUNT):
         #     self.key_states[i] = bool(bitfield & (1 << i))
     async def websocket_server(self, host="0.0.0.0", port=8765):
@@ -78,18 +76,18 @@ class KeyboardPublisher(Node):
         server = await websockets.serve(handler, host, port)
         self.get_logger().info(f"WebSocket server started on {host}:{port}")
         await server.wait_closed()
+    def startROS(self):
+        print("start ros2 spin")
+        rclpy.spin(self)
 
 async def main_async():
     rclpy.init()
     publisher = KeyboardPublisher()
-
-    try:
-        await publisher.websocket_server()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        publisher.destroy_node()
-        rclpy.shutdown()
+    ros_thread = threading.Thread(target=publisher.startROS)
+    ros_thread.start()
+    await publisher.websocket_server()
+    publisher.destroy_node()
+    rclpy.shutdown()
 
 def main():
     ip_cast.start()
