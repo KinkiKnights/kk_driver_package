@@ -1,0 +1,2 @@
+bool is_safety
+bool ope_epb_enable
