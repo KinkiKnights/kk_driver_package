@@ -24,13 +24,13 @@ def multicast_sender():
     # UDPソケットを作成
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
     # マルチキャストTTLを設定
-    sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 32)
+    sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 255)
     while True:
         print(f"Sending: {IP_ADDR}")
         # メッセージを送信
         sock.sendto(IP_ADDR.encode('utf-8'), (MULTICAST_GROUP, PORT))
         # 10秒待機
-        time.sleep(10)
+        time.sleep(2)
 ip_cast = threading.Thread(target=multicast_sender)
 
 """
@@ -58,10 +58,7 @@ class KeyboardPublisher(Node):
         self.mouseX = int(x)
         self.mouseY = int(y)
     def update_key_states(self, binary_data):
-        bitfield = int.from_bytes(binary_data, byteorder='big')
         self.key_states = [char == '1' for char in binary_data]
-        # for i in range(KEY_COUNT):
-        #     self.key_states[i] = bool(bitfield & (1 << i))
     async def websocket_server(self, host="0.0.0.0", port=8765):
         async def handler(websocket):
             while True:
@@ -86,8 +83,6 @@ async def main_async():
     ros_thread = threading.Thread(target=publisher.startROS)
     ros_thread.start()
     await publisher.websocket_server()
-    publisher.destroy_node()
-    rclpy.shutdown()
 
 def main():
     ip_cast.start()
