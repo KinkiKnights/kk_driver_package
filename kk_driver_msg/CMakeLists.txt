@@ -11,9 +11,12 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/EpbCmd.msg"
-  "msg/EpbStatus.msg"
   "msg/PwmCmd.msg"
+  "msg/MotorCmd.msg"
+  "msg/BldcCmd.msg"
+  "msg/EpbStatus.msg"
   "msg/PwmStatus.msg"
+  "msg/EncoderStatus.msg"
   "msg/KeyCtrl.msg"
 )
 ament_export_dependencies(rosidl_default_runtime)
