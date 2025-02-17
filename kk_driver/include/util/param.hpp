@@ -34,6 +34,7 @@ namespace Motor{
         constexpr uint8_t PORT_NUM = 2;
         constexpr uint8_t PORT_NUM_MAX = 4;
         constexpr uint16_t CAN_BASE_ID = 0x100;
+        constexpr uint16_t CAN_ENCODER_OFFSET = 0x10;
         constexpr uint8_t SERIAL_ID = 6;
         constexpr uint16_t CTRL_CMD_TIMEOUT_MS = 1000;
     }    
@@ -44,7 +45,6 @@ namespace Encoder{
         constexpr uint8_t BOARD_NUM = 8;
         constexpr uint8_t PORT_NUM = 2;
         constexpr uint8_t PORT_NUM_MAX = 4;
-        constexpr uint16_t CAN_BASE_ID = 0x120;
         constexpr uint8_t SERIAL_ID = 10;
     }
 } // namespace Paramnamespace Encoder{
@@ -55,6 +55,20 @@ namespace Bldc{
         constexpr uint8_t PORT_NUM = 2;
         constexpr uint16_t CAN_BASE_ID = 0x120;
         constexpr uint8_t SERIAL_ID = 12;
+    }
+} // namespace Param
+namespace C610{
+    namespace Param{
+        constexpr uint8_t BOARD_NUM = 8;
+        constexpr uint8_t PORT_NUM = 1;
+        constexpr uint16_t CAN_BASE_ID = 0x200;
+        constexpr uint8_t SERIAL_ID = 14;
+    }
+} // namespace Param
+namespace C610_FB{
+    namespace Param{
+        constexpr uint8_t PORT_NUM = 4;
+        constexpr uint8_t SERIAL_ID = 15;
     }
 } // namespace Param
 namespace EPB{

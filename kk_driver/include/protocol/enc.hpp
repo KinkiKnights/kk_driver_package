@@ -19,11 +19,11 @@ namespace Encoder{
          * @brief CANのIDから子ＩＤを算出する
          * @return 子ID。想定外子IDの場合は0xFFを返す。
          **/
-        static uint8_t getChildNumber(CanMessage& msg){
-            uint8_t id = (msg.id|(~OFFSET_ID)) - Param::CAN_BASE_ID;
-            if (id < Param::BOARD_NUM) return id;
-            else return 0xff;
-        }
+        // static uint8_t getChildNumber(CanMessage& msg){
+        //     uint8_t id = (msg.id|(~OFFSET_ID)) - Param::CAN_BASE_ID;
+        //     if (id < Param::BOARD_NUM) return id;
+        //     else return 0xff;
+        // }
 
         // 他の基板に付随するため、isMe関数は存在しない。
         // 付随する基板側でフィルタする

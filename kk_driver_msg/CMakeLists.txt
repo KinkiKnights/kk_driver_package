@@ -14,6 +14,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/PwmCmd.msg"
   "msg/MotorCmd.msg"
   "msg/BldcCmd.msg"
+  "msg/C610Cmd.msg"
+  "msg/C610Status.msg"
   "msg/EpbStatus.msg"
   "msg/PwmStatus.msg"
   "msg/Encoder.msg"

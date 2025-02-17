@@ -142,14 +142,14 @@ public:
         uint8_t tmp_c;
         is_success = false;
         while(getByte(tmp_c)){
-            // printf("%d,", (uint8_t)tmp_c);
+            printf("%d,", (uint8_t)tmp_c);
             // 先頭文字列探索
             if (blank_counter < 2){
                 if(tmp_c == 0xF0)
                     blank_counter++;
                 else
                     blank_counter = 0;
-                // printf(": blank search:%d\n", blank_counter);
+                printf(": blank search:%d\n", blank_counter);
 
             }
             // コマンド先頭探索
@@ -158,7 +158,7 @@ public:
                 if (tmp_c == 0xF0) continue;
                 cmd_temporary[tmp_index++] = tmp_c;
                 check_sum = tmp_c;
-                // printf(":cmd type\n");
+                printf(":cmd type\n");
             }
             // コマンド処理
             else {
@@ -174,9 +174,9 @@ public:
                         is_success = true;
                     // チェックサム異常時処理
                     else 
-                        // printf("\nChecksum calc is failed(%d(calc) != %d(frame))...", check_sum, tmp_c);
+                        printf("\nChecksum calc is failed(%d(calc) != %d(frame))...", check_sum, tmp_c);
                     // 初期化処理
-                    // printf("cmd_cmp\n");
+                    printf("cmd_cmp\n");
                     if (is_success){
                         for (uint8_t idx = 0; idx < tmp_index; idx++){
                             frames[idx] = cmd_temporary[idx];

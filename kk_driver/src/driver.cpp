@@ -9,6 +9,8 @@
 #include "kk_driver_msg/msg/epb_status.hpp"
 #include "kk_driver_msg/msg/pwm_status.hpp"
 #include "kk_driver_msg/msg/encoder.hpp"
+#include "kk_driver_msg/msg/c610_cmd.hpp"
+#include "kk_driver_msg/msg/c610_status.hpp"
 
 #include "../include/protocol/_protocol.hpp"
 
@@ -19,9 +21,11 @@ private:
     rclcpp::Subscription<kk_driver_msg::msg::PwmCmd>::SharedPtr pwm_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::MotorCmd>::SharedPtr motor_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::BldcCmd>::SharedPtr bldc_cmd_sub;
+    rclcpp::Subscription<kk_driver_msg::msg::C610Cmd>::SharedPtr c610_cmd_sub;
     rclcpp::Publisher<kk_driver_msg::msg::EpbStatus>::SharedPtr epb_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::PwmStatus>::SharedPtr pwm_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::Encoder>::SharedPtr encoder_status_pub;
+    rclcpp::Publisher<kk_driver_msg::msg::C610Status>::SharedPtr c610_status_pub;
 
 private:
     UART serial;
@@ -30,6 +34,8 @@ private:
     Motor::Serial motor_uart_encoder;
     Bldc::Serial bldc_uart_encoder;
     Encoder::Serial enc_uart_encoder;
+    C610::Serial c610_uart_encoder;
+    C610_FB::Serial c610_status_uart_encoder;
     rclcpp::TimerBase::SharedPtr timer_;
     
 
@@ -51,6 +57,20 @@ private:
                     msg.pos[i] = enc_uart_encoder.position[i];
                 }
                 encoder_status_pub->publish(msg);
+            }
+            if (id == C610_FB::Param::SERIAL_ID) {
+                c610_status_uart_encoder.decode(frames);
+                kk_driver_msg::msg::C610Status msg;
+                uint8_t port_num = 4;
+                msg.position.resize(port_num);
+                msg.speed.resize(port_num);
+                msg.torque.resize(port_num);
+                for (uint8_t i = 0; i < port_num; i++){
+                    msg.position[i] = c610_status_uart_encoder.position[i];
+                    msg.speed[i] = c610_status_uart_encoder.speed[i];
+                    msg.torque[i] = c610_status_uart_encoder.torque[i];
+                }
+                c610_status_pub->publish(msg);
             }
         }
     }
@@ -104,10 +124,23 @@ public:
                 for (uint8_t i = 0; i < port_num; i++){
                     bldc_uart_encoder.port[i] = msg->port[i];
                     bldc_uart_encoder.speed[i] = msg->spd[i];
-                    printf("BLDC = %d=>%d, \n", bldc_uart_encoder.port[i], bldc_uart_encoder.speed[i]);
                 }
                 uint8_t frame[255];
                 serial.sendFrame(frame, bldc_uart_encoder.encode(frame));
+            }
+        );
+        c610_cmd_sub = this->create_subscription<kk_driver_msg::msg::C610Cmd>("c610/cmd", rclcpp::QoS(10),
+            [&](const kk_driver_msg::msg::C610Cmd::SharedPtr msg){
+                c610_uart_encoder.child_id = msg->child_id;
+                uint8_t port_num = msg->port.size();
+                c610_uart_encoder.port_num = port_num;
+                printf("port_num = %d\n", port_num);
+                for (uint8_t i = 0; i < port_num; i++){
+                    c610_uart_encoder.port[i] = msg->port[i];
+                    c610_uart_encoder.speed[i] = msg->torque[i];
+                }
+                uint8_t frame[255];
+                serial.sendFrame(frame, c610_uart_encoder.encode(frame));
             }
         );
 
@@ -115,6 +148,7 @@ public:
         epb_status_pub = this->create_publisher<kk_driver_msg::msg::EpbStatus>("epb/status", rclcpp::QoS(1));
         pwm_status_pub = this->create_publisher<kk_driver_msg::msg::PwmStatus>("pwm/position", rclcpp::QoS(1));
         encoder_status_pub = this->create_publisher<kk_driver_msg::msg::Encoder>("mtr/encoder", rclcpp::QoS(1));
+        c610_status_pub = this->create_publisher<kk_driver_msg::msg::C610Status>("c610/status", rclcpp::QoS(1));
         
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(50), // 1秒ごとに実行
