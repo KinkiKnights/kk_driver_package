@@ -70,7 +70,7 @@ namespace ServoPwm{
                 uint8_t* section = &msg.data[port*2];
                 position[port] = section[1] & (Max_POSITION >> 8);
                 position[port] = (position[port]<<8) + section[0];
-                speed[port] = (section[port]>>4)& Max_SPEED;
+                speed[port] = section[port] & Max_SPEED;
             }
         }
     };

@@ -23,7 +23,7 @@ namespace ServoPwm{
         constexpr uint8_t BOARD_NUM = 8;
         constexpr uint8_t PORT_NUM = 8;
         constexpr uint8_t PORT_NUM_MAX = 4;
-        constexpr uint16_t CAN_BASE_ID = 0x200;
+        constexpr uint16_t CAN_BASE_ID = 0x140;
         constexpr uint8_t SERIAL_ID = 4;
     }    
 } // namespace Param

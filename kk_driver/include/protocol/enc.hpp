@@ -25,42 +25,33 @@ namespace Encoder{
             else return 0xff;
         }
 
-        /**
-         * @brief CAＮメッセージのIDが一致するかを確認する
-         * @return 各基板側ファームからの利用が想定されている。
-         */
-        inline static bool isMe(CanMessage& msg, uint16_t& id){
-            if (msg.id == id) return true;
-            if (msg.id == (id + OFFSET_ID))return true;
-            return false;
-        }
+        // 他の基板に付随するため、isMe関数は存在しない。
+        // 付随する基板側でフィルタする
+
     public: // メッセージエンコード・デコード
-        bool offset_port;
-        int32_t position[2];
+        uint32_t position[2];
 
         /**
          * CANメッセージをエンコードする
          */
-        CanMessage encode(uint16_t child_id, uint8_t port = 0){
+        CanMessage encode(uint16_t can_id, uint8_t port = 0){
             CanMessage msg;
 
             // ヘッダ情報設定
-            msg.id = Param::CAN_BASE_ID + child_id;
-            if (offset_port) msg.id += OFFSET_ID;
+            msg.id = can_id;
             msg.dlc = 8;
             msg.port = port;
 
             for(uint8_t port = 0; port < 2; port++){
                 // フレームの設定
-                Command::int32_to_array(&msg.data[port*4], position[port]);
+                Command::uint32_to_array(&msg.data[port*4], position[port]);
             }
             return msg;
         }
 
         void decode(CanMessage& msg){
-            offset_port = ((msg.id & OFFSET_ID) > 0);
             for(uint8_t port = 0; port < 2; port++){
-                Command::array_to_int32(&msg.data[port*4], position[port]);
+                Command::array_to_uint32(&msg.data[port*4], position[port]);
             }
         }
     };

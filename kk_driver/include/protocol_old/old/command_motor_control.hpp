@@ -45,18 +45,5 @@ namespace Command
                 target[idx] *= (DIR_MASK & frame[idx4 + 4]) ? -1 : 1;
             }
         }
-        
-    public: // 応用関数
-        void setDuty(float duty, uint8_t port){
-            int32_t binary= int32_t(duty * DEF::DUTY_MAX);
-            target[port] = binary;
-        }
-
-        float getDuty(uint8_t port){
-            if (target[port] < 0) 
-                return -1.f * (-target[port]) / DEF::DUTY_MAX;
-            else
-                return 1.f * (target[port]) / DEF::DUTY_MAX;
-        }
     };
 } // namespace Command

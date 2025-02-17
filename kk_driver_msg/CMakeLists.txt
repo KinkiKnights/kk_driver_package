@@ -16,7 +16,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/BldcCmd.msg"
   "msg/EpbStatus.msg"
   "msg/PwmStatus.msg"
-  "msg/EncoderStatus.msg"
+  "msg/Encoder.msg"
   "msg/KeyCtrl.msg"
 )
 ament_export_dependencies(rosidl_default_runtime)

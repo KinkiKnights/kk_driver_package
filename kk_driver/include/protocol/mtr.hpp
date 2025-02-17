@@ -14,6 +14,7 @@ namespace Motor{
             SPEED = 3
         };
 
+        constexpr uint32_t MAX_TARGET = 0xffffff;
         constexpr uint32_t DUTY_MAX = 1000;
     } // namespace name
     
@@ -77,15 +78,12 @@ namespace Motor{
         }
     public: // 応用関数
         void setDuty(float duty, uint8_t port){
-            int32_t binary= int32_t(duty * DEF::DUTY_MAX);
+            int32_t binary= static_cast<int32_t>(duty * DEF::MAX_TARGET);
             target[port] = binary;
         }
 
         float getDuty(uint8_t port){
-            if (target[port] < 0) 
-                return -1.f * (-target[port]) / DEF::DUTY_MAX;
-            else
-                return 1.f * (target[port]) / DEF::DUTY_MAX;
+                return 1.f * static_cast<float>(target[port]) / DEF::MAX_TARGET;
         }
     };
 
@@ -153,20 +151,6 @@ namespace Motor{
                 port[idx] = sub_msg & 0b11;
                 ctrl[idx] = sub_msg >> 2;
             }
-        }
-
-        
-    public: // 応用関数
-        void setDuty(float duty, uint8_t port){
-            int32_t binary= int32_t(duty * DEF::DUTY_MAX);
-            target[port] = binary;
-        }
-
-        float getDuty(uint8_t port){
-            if (target[port] < 0) 
-                return -1.f * (-target[port]) / DEF::DUTY_MAX;
-            else
-                return 1.f * (target[port]) / DEF::DUTY_MAX;
         }
     };
 };

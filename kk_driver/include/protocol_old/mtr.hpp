@@ -4,15 +4,26 @@
 #include "../util/param.hpp"
 #include "./can_msg.hpp"
 
-namespace ServoPwm{
+namespace Motor{
+    namespace DEF
+    {
+        enum{
+            FREE = 0,
+            DUTY = 1,
+            POSITION = 2,
+            SPEED = 3
+        };
+
+        constexpr uint32_t DUTY_MAX = 1000;
+    } // namespace name
+    
+
     /**
      * @brief CANプロトコル
-     * @note サーボは上下4ポートずつでCANIDが8オフセットしたID構成になっている
+     * @note モータは基本2ポート.4ポート基板はCANIDが8オフセットしたID構成になっている
      */
     struct Can{
         static const uint16_t OFFSET_ID = 0x08;
-        static const uint16_t Max_SPEED = 0xF0;
-        static const uint16_t Max_POSITION = 0x0FFF;
 
     public: // ユーティリティ関数
         /**
@@ -35,9 +46,9 @@ namespace ServoPwm{
             return false;
         }
     public: // メッセージエンコード・デコード
-        bool offset_port;
-        uint16_t position[4]; // 4000カウントまで(10000カウント/20ms)
-        uint8_t speed[4];
+        bool offset_port = false;
+        int32_t target[4]; // 24Bitまで
+        uint8_t ctrl_mode[4];
 
         /**
          * CANメッセージをエンコードする
@@ -47,31 +58,34 @@ namespace ServoPwm{
 
             // ヘッダ情報設定
             msg.id = Param::CAN_BASE_ID + child_id;
-            if (offset_port) msg.id += OFFSET_ID;            
+            if (offset_port) msg.id += OFFSET_ID;
             msg.dlc = 8;
             msg.port = port;
 
-            for(uint8_t port = 0; port < 4; port++){
-                // 送信値のバリデーション
-                if (position[port] > Max_POSITION) position[port] = Max_POSITION;
-                if (speed[port] > Max_SPEED) speed[port] = Max_SPEED;
-                
+            for(uint8_t port = 0; port < 2; port++){
                 // フレームの設定
-                uint8_t* section = &msg.data[port*2];
-                section[0] = position[port] & 0xff;
-                msg.data[1] = ((position[port]>>8) & 0xF) + (speed[port]<<4);
+                Command::int24_plus_to_array(&msg.data[port*4], target[port], ctrl_mode[port]);
             }
             return msg;
         }
 
         void decode(CanMessage& msg){
             offset_port = ((msg.id & OFFSET_ID) > 0);
-            for(uint8_t port = 0; port < 4; port++){
-                uint8_t* section = &msg.data[port*2];
-                position[port] = section[1] & (Max_POSITION >> 8);
-                position[port] = (position[port]<<8) + section[0];
-                speed[port] = (section[port]>>4)& Max_SPEED;
+            for(uint8_t port = 0; port < 2; port++){
+                Command::array_to_int24_plus(&msg.data[port*4], target[port], ctrl_mode[port]);
             }
+        }
+    public: // 応用関数
+        void setDuty(float duty, uint8_t port){
+            int32_t binary= int32_t(duty * DEF::DUTY_MAX);
+            target[port] = binary;
+        }
+
+        float getDuty(uint8_t port){
+            if (target[port] < 0) 
+                return -1.f * (-target[port]) / DEF::DUTY_MAX;
+            else
+                return 1.f * (target[port]) / DEF::DUTY_MAX;
         }
     };
 
@@ -84,10 +98,10 @@ namespace ServoPwm{
         uint8_t child_id = 0;
         // メッセージに含むポート数
         uint8_t port_num = 0;
-        // 制御角度
-        uint16_t pos[Param::PORT_NUM];
-        // 制御速度
-        uint8_t spd[Param::PORT_NUM];
+        // 制御目標
+        int32_t target[Param::PORT_NUM];
+        // 制御種別
+        uint8_t ctrl[Param::PORT_NUM];
         // 制御対象ポート
         uint8_t port[Param::PORT_NUM];
 
@@ -106,15 +120,13 @@ namespace ServoPwm{
             if (port_num > Param::PORT_NUM) return 0;
 
             // 制御情報の設定
-            uint8_t* section;
             for (uint8_t idx = 0; idx < port_num; idx++){
-                // ポートごとの情報の先頭を計算
-                section = &frame[3 + idx * 4];
-                // ターゲットを設定
-                section[0] = port[idx];
-                section[1] = spd[idx];
-                section[2] = pos[idx] >> 8;
-                section[3] = pos[idx] & 0xFF;
+                // バリデーション
+                if (ctrl[idx] > 0b11111) ctrl[idx] = 0;
+                
+                // フレーム情報の設定
+                uint8_t sub_msg = ((ctrl[idx] & 0b11111)<<2) + (port[idx] & 0b11);
+                Command::int24_plus_to_array(&frame[idx * 4 + 3], target[idx], sub_msg);
             }
             return dlc + 2;
         }
@@ -134,18 +146,27 @@ namespace ServoPwm{
             }
 
             // 制御情報の取得
-            uint8_t* section;
             for (uint8_t idx = 0; idx < port_num; idx++){
                 // ポートごとの情報の先頭を計算
-                section = &frame[3 + idx * 4];
-                port[idx] = section[0];
-                spd[idx] = section[1];
-                pos[idx] = section[2];
-                pos[idx] = (pos[idx] << 8) + section[3];
+                uint8_t sub_msg;
+                Command::array_to_int24_plus(&frame[idx * 4 + 3], target[idx], sub_msg);
+                port[idx] = sub_msg & 0b11;
+                ctrl[idx] = sub_msg >> 2;
             }
         }
+
+        
+    public: // 応用関数
+        void setDuty(float duty, uint8_t port){
+            int32_t binary= int32_t(duty * DEF::DUTY_MAX);
+            target[port] = binary;
+        }
+
+        float getDuty(uint8_t port){
+            if (target[port] < 0) 
+                return -1.f * (-target[port]) / DEF::DUTY_MAX;
+            else
+                return 1.f * (target[port]) / DEF::DUTY_MAX;
+        }
     };
-}
-
-
-
+};
