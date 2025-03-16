@@ -11,21 +11,21 @@
 #include "kk_driver_msg/msg/encoder.hpp"
 #include "kk_driver_msg/msg/c610_cmd.hpp"
 #include "kk_driver_msg/msg/c610_status.hpp"
+#include "kk_driver_msg/msg/core.hpp"
 
 #include "../include/protocol/_protocol.hpp"
 
 
 class DriverNode : public rclcpp::Node{
 private:
-    rclcpp::Subscription<kk_driver_msg::msg::EpbCmd>::SharedPtr epb_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::PwmCmd>::SharedPtr pwm_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::MotorCmd>::SharedPtr motor_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::BldcCmd>::SharedPtr bldc_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::C610Cmd>::SharedPtr c610_cmd_sub;
-    rclcpp::Publisher<kk_driver_msg::msg::EpbStatus>::SharedPtr epb_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::PwmStatus>::SharedPtr pwm_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::Encoder>::SharedPtr encoder_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::C610Status>::SharedPtr c610_status_pub;
+    rclcpp::Publisher<kk_driver_msg::msg::Core>::SharedPtr core_pub;
 
 private:
     UART serial;
@@ -47,6 +47,15 @@ private:
             uint8_t id = frames[0];
             // エンコーダ処理
             printf("id :%d\n",id);
+            if (id == EPBFeedBack::Param::SERIAL_ID) {
+                kk_driver_msg::msg::Core msg;
+                for (uint8_t i = 0; i < 7; i++){
+                    msg.cmd[i] = frames[2 + i];
+                }
+                msg.hp = frames[10];
+                msg.is_safety = frames[9];
+                core_pub->publish(msg);
+            }
             if (id == Encoder::Param::SERIAL_ID) {
                 enc_uart_encoder.decode(frames);
                 kk_driver_msg::msg::Encoder msg;
@@ -80,13 +89,6 @@ public:
     : Node("driver_node",name_space,options){
         
         // 制御コマンドTopicを受信するSubscriberを初期化
-        epb_cmd_sub = this->create_subscription<kk_driver_msg::msg::EpbCmd>("epb/cmd", rclcpp::QoS(10),
-            [&](const kk_driver_msg::msg::EpbCmd::SharedPtr msg){
-                epb_uart_encoder.is_safety = msg->is_safety;
-                uint8_t frame[3];
-                serial.sendFrame(frame, epb_uart_encoder.encode(frame));
-            }
-        );
         pwm_cmd_sub = this->create_subscription<kk_driver_msg::msg::PwmCmd>("pwm/cmd", rclcpp::QoS(10),
             [&](const kk_driver_msg::msg::PwmCmd::SharedPtr msg){
                 pwm_uart_encoder.child_id = msg->child_id;
@@ -145,11 +147,11 @@ public:
         );
 
         // 基板状態を送信するPublisherを初期化
-        epb_status_pub = this->create_publisher<kk_driver_msg::msg::EpbStatus>("epb/status", rclcpp::QoS(1));
         pwm_status_pub = this->create_publisher<kk_driver_msg::msg::PwmStatus>("pwm/position", rclcpp::QoS(1));
         encoder_status_pub = this->create_publisher<kk_driver_msg::msg::Encoder>("mtr/encoder", rclcpp::QoS(1));
         c610_status_pub = this->create_publisher<kk_driver_msg::msg::C610Status>("c610/status", rclcpp::QoS(1));
-        
+        core_pub = this->create_publisher<kk_driver_msg::msg::Core>("core", rclcpp::QoS(1));
+
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(50), // 1秒ごとに実行
             std::bind(&DriverNode::update, this));

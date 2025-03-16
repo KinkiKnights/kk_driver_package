@@ -65,6 +65,8 @@ public:
     {
         if(initUart()){
             printf("Open Serial\n");
+            if (uart_fd_ == -1)
+                printf("Connect Disabel\n");
             running_ = true;
             recv_thread_ = std::thread(&UART::receiveLoop, this);
         }
@@ -142,14 +144,14 @@ public:
         uint8_t tmp_c;
         is_success = false;
         while(getByte(tmp_c)){
-            printf("%d,", (uint8_t)tmp_c);
+            // printf("%d,", (uint8_t)tmp_c);
             // 先頭文字列探索
             if (blank_counter < 2){
                 if(tmp_c == 0xF0)
                     blank_counter++;
                 else
                     blank_counter = 0;
-                printf(": blank search:%d\n", blank_counter);
+                // printf(": blank search:%d\n", blank_counter);
 
             }
             // コマンド先頭探索
@@ -158,7 +160,7 @@ public:
                 if (tmp_c == 0xF0) continue;
                 cmd_temporary[tmp_index++] = tmp_c;
                 check_sum = tmp_c;
-                printf(":cmd type\n");
+                // printf(":cmd type\n");
             }
             // コマンド処理
             else {

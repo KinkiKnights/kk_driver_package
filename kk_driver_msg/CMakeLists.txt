@@ -20,6 +20,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/PwmStatus.msg"
   "msg/Encoder.msg"
   "msg/KeyCtrl.msg"
+  "msg/Core.msg"
 )
 ament_export_dependencies(rosidl_default_runtime)
 

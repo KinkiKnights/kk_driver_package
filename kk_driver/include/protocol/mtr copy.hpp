@@ -110,20 +110,21 @@ namespace Motor{
          */
         uint8_t encode(uint8_t* frame){
             // ヘッダ情報の設定
-            uint8_t dlc = 2 * port_num + 1; 
+            uint8_t dlc = 4 * port_num + 1; 
             frame[0] = Param::SERIAL_ID;
             frame[1] = dlc;
             frame[2] = child_id;
             // 送信ポート数のバリデーション
             if (port_num > Param::PORT_NUM) return 0;
+
             // 制御情報の設定
             for (uint8_t idx = 0; idx < port_num; idx++){
-
-                uint8_t targets = static_cast<uint8_t>( abs(target[idx]) >> 17);
-                if (target[idx] < 0) targets += 0x80;
-
-                frame[idx * 2 + 3] = port[idx];
-                frame[idx * 2 + 4] = targets;
+                // バリデーション
+                if (ctrl[idx] > 0b11111) ctrl[idx] = 0;
+                
+                // フレーム情報の設定
+                uint8_t sub_msg = ((ctrl[idx] & 0b11111)<<2) + (port[idx] & 0b11);
+                Command::int24_plus_to_array(&(frame[idx * 4 + 3]), target[idx], sub_msg);
             }
             return dlc + 2;
         }
@@ -133,7 +134,7 @@ namespace Motor{
          */
         void decode(uint8_t* frame){
             // ヘッダ情報の解析
-            port_num = (frame[1] -1) / 2; // dlc抽出
+            port_num = (frame[1] -1) / 4; // dlc抽出
             child_id = frame[2];
 
             // 送信ポート数のバリデーション
@@ -145,14 +146,10 @@ namespace Motor{
             // 制御情報の取得
             for (uint8_t idx = 0; idx < port_num; idx++){
                 // ポートごとの情報の先頭を計算
-                uint8_t ports = frame[idx * 2 + 3];
-                uint8_t targets = frame[idx * 2 + 4];
-                int32_t target_int = static_cast<int32_t>(targets) << 17;
-                if (targets > 0x7F)
-                    target_int *= -1;
-                target[idx] = target_int;
-                port[idx] = ports;
-                ctrl[idx] = 1;
+                uint8_t sub_msg;
+                Command::array_to_int24_plus(&(frame[idx * 4 + 3]), target[idx], sub_msg);
+                port[idx] = sub_msg & 0b11;
+                ctrl[idx] = sub_msg >> 2;
             }
         }
     };
