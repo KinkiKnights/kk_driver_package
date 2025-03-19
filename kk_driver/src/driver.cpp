@@ -53,6 +53,7 @@ private:
                     msg.cmd[i] = frames[2 + i];
                 }
                 msg.hp = frames[10];
+                msg.limit = frames[11];
                 msg.is_safety = frames[9];
                 core_pub->publish(msg);
             }
