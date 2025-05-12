@@ -67,6 +67,7 @@ namespace Encoder{
         uint8_t port_num = 0;
         // 現在位置
         int32_t position[Param::PORT_NUM];
+        uint16_t last_pos[2];
 
     public:
         /**
@@ -106,7 +107,18 @@ namespace Encoder{
             // 制御情報の取得
             for (uint8_t idx = 0; idx < port_num; idx++){
                 // ポートごとの情報の先頭を計算
+                // uint32_t now_pos;
                 Command::array_to_int32(&frame[idx * 4 + 3], position[idx]);
+                // Command::array_to_int32(&frame[idx * 4 + 3], now_pos);
+                // position[idx] += now_pos - last_pos[idx];
+                // if (last_pos[idx] > 0xA000 && now_pos < 0x3FFF){
+                //     position[idx] += 0xFFFF;
+                // }
+                // if (now_pos > 0xA000 && last_pos[idx] < 0x3FFF){
+                //     position[idx] -= 0xFFFF;
+                // }
+                // last_pos[idx] = now_pos;
+                
             }
         }
     };

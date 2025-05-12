@@ -49,12 +49,12 @@ private:
             printf("id :%d\n",id);
             if (id == EPBFeedBack::Param::SERIAL_ID) {
                 kk_driver_msg::msg::Core msg;
-                for (uint8_t i = 0; i < 7; i++){
+                for (uint8_t i = 0; i < 8; i++){
                     msg.cmd[i] = frames[2 + i];
                 }
-                msg.hp = frames[10];
-                msg.limit = frames[11];
-                msg.is_safety = frames[9];
+                msg.hp = frames[12];
+                msg.limit = frames[13];
+                msg.is_safety = frames[11];
                 core_pub->publish(msg);
             }
             if (id == Encoder::Param::SERIAL_ID) {
@@ -113,6 +113,13 @@ public:
                     motor_uart_encoder.port[i] = msg->port[i];
                     motor_uart_encoder.ctrl[i] = msg->ctrl[i];
                     motor_uart_encoder.target[i] = msg->target[i];
+                    if (msg->ctrl[i] == 1){
+                        if (msg->target[i] > 0xffffff)
+                            msg->target[i] = 0xffffff;
+                        if (msg->target[i] < -0xffffff)
+                            msg->target[i] = -0xffffff;
+
+                    }
                 }
                 uint8_t frame[255];
                 serial.sendFrame(frame, motor_uart_encoder.encode(frame));
