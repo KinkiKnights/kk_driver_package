@@ -1,2 +1,2 @@
 uint8[] motor_id
-float[] duty 
+float32[] duty 
