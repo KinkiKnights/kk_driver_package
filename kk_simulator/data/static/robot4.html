@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GM6020 WebSocket Controller</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 120px;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            white-space: pre-wrap;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GM6020 Motor Controller</h1>
+
+        <div class="card">
+            <h2>コマンド送信</h2>
+            <label>Motor ID: <input type="number" id="motor_id" step="1" value="0"></label><br>
+            <label>Duty Cycle: <input type="number" id="duty" step="0.01" value="0"></label><br>
+            <button onclick="sendCommand()">送信</button>
+        </div>
+
+        <div class="card">
+            <h2>モーター状態</h2>
+            <div id="status">接続待機中...</div>
+        </div>
+    </div>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:8001');
+        let lastUpdate = 0;
+
+        // WebSocketイベントハンドラ
+        ws.onopen = () => {
+            console.log('WebSocket接続が確立しました');
+            updateStatusDisplay('接続成功');
+        };
+
+        ws.onmessage = (event) => {
+            try {
+                const messages = JSON.parse(event.data);
+                messages.forEach(handleMessage);
+            } catch (e) {
+                console.error('メッセージ解析エラー:', e);
+            }
+        };
+
+        ws.onclose = () => {
+            updateStatusDisplay('接続が切断されました');
+            console.log('WebSocket接続が閉じました');
+        };
+
+        // メッセージ処理
+        function handleMessage(msg) {
+            if (msg.topic === 'gm6020/status' && msg.type === 'Gm6020Status') {
+                const {position, speed, torque} = msg.field;
+                const now = Date.now();
+                
+                // 100ms以上の間隔で更新
+                if (now - lastUpdate > 100) {
+                    lastUpdate = now;
+                    const power = calculatePower(torque, speed);
+                    updateStatusDisplay(
+                        `位置: ${position.toFixed(2)} rad\n` +
+                        `速度: ${speed.toFixed(2)} rad/s\n` +
+                        `トルク: ${torque.toFixed(2)} Nm\n` +
+                        `推定電力: ${power.toFixed(2)} W`
+                    );
+                }
+            }
+        }
+
+        // コマンド送信関数
+        function sendStatus() {
+            const motorId = parseInt(document.getElementById('motor_id').value);
+            const duty = parseFloat(document.getElementById('duty').value);
+
+            const command = {
+                topic: 'gm6020/cmd',
+                type: 'Gm6020Cmd',
+                field: {
+                    motor_id: motorId,
+                    duty: duty
+                }
+            };
+
+            const command = {
+                topic: 'gm6020/cmd',
+                type: 'Gm6020Cmd',
+                field: {
+                    pos: position,
+                    spd: speed,
+                    torque: torque,
+
+                }
+            };
+
+            if (ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify(command));
+            }
+        }
+
+        // 電力計算関数（トルク × 角速度）
+        function calculatePower(torque, speed) {
+            return Math.abs(torque * speed);
+        }
+
+        // 状態表示更新
+        function updateStatusDisplay(text) {
+            document.getElementById('status').textContent = text;
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>モータシミュレータ</title>
+</head>
+<body>
+  <h1>モータシミュレータ（GM6020風）</h1>
+  <button onclick="applyVoltage(10000)">電圧 +10000 指令</button>
+  <button onclick="applyVoltage(0)">電圧 0 指令</button>
+  <button onclick="applyVoltage(-10000)">電圧 -10000 指令</button>
+
+  <script>
+    GM_SIM = {
+        PARAMS:{
+            torqueConstant: 0.0025,   // [Nm/mA]
+            inertia: 0.0001,          // [kg·m^2]
+            damping: 0.0002,          // [Nms]
+            responseTime: 0.05,       // 一次遅れの時定数 [s]
+            maxSpeed: 3000,           // [rpm]
+            maxTorqueCurrent: 10000,  // [mA]
+            tempRisePerTorque: 0.01,  // [°C/mA]
+            tempAmbient: 25           // [°C]
+        },
+        state_template : {
+            position: 0,         // [angle: 0–8191]
+            speed: 0,            // [rpm]
+            torqueCurrent: 0,    // [mA]
+            temperature: GM_SIM.PARAMS.tempAmbient,
+            voltage: 0           // [指令値 -30000〜+30000]
+        },
+        motors: [],
+        addMotor:(num)=>{
+            for (idx = 0, idx < num; idx++)
+            GM_SIM.motors.push(JSON.parse(JSON.stringify(GM_SIM.state_template))); 
+        },
+        setDuty:(idx, v)=>{
+            GM_SIM.motors[idx].voltage = Math.max(-30000, Math.min(30000, v));
+        },
+        updateAll(dt){
+            GM_SIM.motors.forEach((mtr)=>{
+                GM_SIM.updateMotor(mtr, dt);
+            });
+        },
+        updateMotor: function(state, dt) {
+            // 電流 = 電圧の簡易比例（ここでは最大30000で10000mA）
+            let targetCurrent = (state.voltage / 30000) * PARAMS.maxTorqueCurrent;
+            // 一次遅れ応答（トルク電流）
+            state.torqueCurrent += (targetCurrent - state.torqueCurrent) * (dt / PARAMS.responseTime);
+      
+            // トルク = Kt * 電流
+            const torque = PARAMS.torqueConstant * state.torqueCurrent;
+      
+            // 加速度 = (トルク - D*速度) / I
+            const accel = (torque - PARAMS.damping * state.speed) / PARAMS.inertia;
+      
+            // 速度更新
+            state.speed += accel * dt * 60 / (2 * Math.PI); // rad/s -> rpm
+            state.speed = Math.max(-PARAMS.maxSpeed, Math.min(PARAMS.maxSpeed, state.speed));
+      
+            // 位置更新
+            state.position += state.speed * dt * (8192 / 60); // 0–8191の範囲にマッピング
+            state.position = ((Math.round(state.position)) % 8192 + 8192) % 8192; // wraparound
+      
+            // 温度更新（仮にトルクに比例して上昇）
+            state.temperature = PARAMS.tempAmbient + Math.abs(state.torqueCurrent) * PARAMS.tempRisePerTorque;
+      
+            printStatus(state);
+          }
+
+    };
+
+
+
+    // ===== モータの一次遅れシミュレーション =====
+    function printStatus(state) {
+      console.clear();
+      console.log("==== フィードバック ====");
+      console.log("角度        :", state.position.toFixed(0));      // [0-8191]
+      console.log("回転速度    :", state.speed.toFixed(1), "rpm"); // [rpm]
+      console.log("トルク電流  :", state.torqueCurrent.toFixed(0), "mA");
+      console.log("温度        :", state.temperature.toFixed(1), "°C");
+    }
+
+    // ===== ループ実行（50ms毎） =====
+    setInterval(() => {
+      GM_SIM.updateAll(0.05);
+    }, 50);
+  </script>
+</body>
+</html>

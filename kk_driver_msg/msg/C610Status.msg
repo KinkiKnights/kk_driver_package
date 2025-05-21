@@ -1,3 +1,3 @@
-uint16[] position
-uint16[] speed
-uint16[] torque
+int32[7] position
+int16[7] speed
+int16[7] torque

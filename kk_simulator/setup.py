@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'kk_simulator'
 
@@ -8,8 +10,13 @@ setup(
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
+            ['resource/' + package_name],
+            ),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'static'), 
+            glob('data/static/*.*')),
+        (os.path.join('share', package_name, 'static'), 
+            glob('data/static/*/*.*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +27,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'kk_simulator = kk_simulator.kk_simulator:main'
+            'servo = kk_simulator.servo:main',
+            'gm6020 = kk_simulator.gm6020:main'
+            # 'sim_web = kk_simulator.sim_web:main'
         ],
     },
+    py_modules=['sim_web', 'kk_http', "ws_node"]
 )

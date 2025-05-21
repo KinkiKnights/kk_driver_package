@@ -11,20 +11,16 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/EpbCmd.msg"
+  "msg/EpbStatus.msg"
   "msg/PwmCmd.msg"
+  "msg/PwmStatus.msg"
   "msg/MotorCmd.msg"
+  "msg/Encoder.msg"
   "msg/BldcCmd.msg"
   "msg/C610Cmd.msg"
   "msg/C610Status.msg"
   "msg/Gm6020Cmd.msg"
   "msg/Gm6020Status.msg"
-  "msg/EpbStatus.msg"
-  "msg/PwmStatus.msg"
-  "msg/Encoder.msg"
-  "msg/KeyCtrl.msg"
-  "msg/Core.msg"
-  "msg/CameraCmd.msg"
-  "msg/MouseCtrl.msg"
 )
 ament_export_dependencies(rosidl_default_runtime)
 

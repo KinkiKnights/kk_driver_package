@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GM6020 Motor Simulator</title>
+    <style>
+        .container {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .status-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .progress-bar {
+            width: 200px;
+            height: 20px;
+            background-color: #eee;
+            margin: 5px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            transition: width 0.1s;
+        }
+        .motor-visual {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin: 20px 0;
+            animation: rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GM6020 Motor Simulator</h1>
+        <div class="status-box">
+            <h3>Real-time Status</h3>
+            <p>Position: <span id="position">0</span> rad</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="speed-bar"></div>
+            </div>
+            <p>Speed: <span id="speed">0</span> rad/s</p>
+            <p>Torque: <span id="torque">0</span> N·m</p>
+        </div>
+        <div class="motor-visual" id="motor-visual"></div>
+        <button onclick="setDuty(1)">Full Forward</button>
+        <button onclick="setDuty(-1)">Full Reverse</button>
+        <button onclick="setDuty(0)">Stop</button>
+        <input type="range" id="dutyInput" min="-1" max="1" step="0.1" value="0">
+    </div>
+
+    <script>
+        // モーターパラメータ設定
+        const motorParams = {
+            maxTorque: 2.5,        // 最大トルク [N·m]
+            torqueConstant: 0.12,  // トルク定数 [N·m/A]
+            inertia: 0.02,         // ロータ慣性 [kg·m²]
+            friction: 0.05,       // 粘性摩擦係数 [N·m·s/rad]
+            maxSpeed: 300,         // 最大回転速度 [rad/s]
+            timeStep: 0.01         // シミュレーションステップ [s]
+        };
+
+        // モーター状態
+        let motorState = {
+            position: 0,
+            speed: 0,
+            torque: 0,
+            duty: 0
+        };
+
+        // Duty比設定関数
+        function setDuty(duty) {
+            motorState.duty = Math.max(-1, Math.min(1, duty));
+            document.getElementById('dutyInput').value = duty;
+        }
+
+        // 物理シミュレーション更新
+        function updateSimulation() {
+            // トルク計算（Duty比に基づく）
+            const appliedTorque = motorState.duty * motorParams.maxTorque;
+            
+            // 速度変化計算（オイラー法）
+            const acceleration = (appliedTorque - motorParams.friction * motorState.speed) / motorParams.inertia;
+            motorState.speed += acceleration * motorParams.timeStep;
+            
+            // 速度制限
+            motorState.speed = Math.max(-motorParams.maxSpeed, Math.min(motorState.speed, motorParams.maxSpeed));
+            
+            // 位置更新
+            motorState.position += motorState.speed * motorParams.timeStep;
+            motorState.position %= (2 * Math.PI); // 0～2πで正規化
+
+            // 表示更新
+            document.getElementById('position').textContent = motorState.position.toFixed(3);
+            document.getElementById('speed').textContent = motorState.speed.toFixed(3);
+            document.getElementById('torque').textContent = appliedTorque.toFixed(3);
+            
+            // プログレスバー更新
+            const speedPercent = Math.abs(motorState.speed / motorParams.maxSpeed * 100);
+            document.getElementById('speed-bar').style.width = `${speedPercent}%`;
+            
+            // モーター視覚表現
+            const motorVisual = document.getElementById('motor-visual');
+            motorVisual.style.animationDuration = `${Math.abs(2 / (motorState.speed / (2*Math.PI)))}s`;
+            motorVisual.style.animationPlayState = motorState.speed !== 0 ? 'running' : 'paused';
+        }
+
+        // イベントリスナー設定
+        document.getElementById('dutyInput').addEventListener('input', (e) => {
+            setDuty(parseFloat(e.target.value));
+        });
+
+        // シミュレーションループ開始
+        setInterval(updateSimulation, motorParams.timeStep * 1000);
+    </script>
+</body>
+</html>

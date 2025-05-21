@@ -1,3 +1,4 @@
-uint8 child_id
 bool is_power
-uint16[] pos
+uint8 head_port
+uint16[8] pos
+uint8[8] spd

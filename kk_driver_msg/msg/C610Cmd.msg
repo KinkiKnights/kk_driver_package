@@ -1,3 +1,2 @@
-uint8 child_id
-uint8[] port
-uint16[] torque
+uint8[] motor_id
+float32[] duty

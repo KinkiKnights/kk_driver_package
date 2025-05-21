@@ -1,0 +1,47 @@
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:1[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:[m[K In constructor ‘[01m[KUART::UART()[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:26:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KUART::buffer_tail_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   26 |     size_t [01;35m[Kbuffer_tail_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:23:23:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::atomic<bool> UART::running_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   23 |     std::atomic<bool> [01;35m[Krunning_[m[K;
+      |                       [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:1[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:64:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   64 |     [01;35m[KUART[m[K(): ring_buffer_(BUFFER_SIZE), buffer_head_(0), buffer_tail_(0), running_(false), buffer_overflowed_(false)
+      |     [01;35m[K^~~~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:3[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epb.hpp:[m[K In static member function ‘[01m[Kstatic bool EPB::Can::isMe(CanMessage&, uint16_t&)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epb.hpp:27:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   27 |         inline static bool isMe(CanMessage& msg, [01;35m[Kuint16_t& id[m[K){
+      |                                                  [01;35m[K~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:4[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epbfb.hpp:[m[K In static member function ‘[01m[Kstatic bool EPBFeedBack::Can::isMe(CanMessage&, uint16_t&)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epbfb.hpp:27:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   27 |         inline static bool isMe(CanMessage& msg, [01;35m[Kuint16_t& id[m[K){
+      |                                                  [01;35m[K~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:8[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/c610.hpp:[m[K In member function ‘[01m[KCanMessage C610::Can::encode(uint16_t, uint8_t)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/c610.hpp:44:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kchild_id[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   44 |         CanMessage encode([01;35m[Kuint16_t child_id[m[K, uint8_t port = 0){
+      |                           [01;35m[K~~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:[m[K In lambda function:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:120:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kchild_id[m[K’
+  120 |                 motor_uart_encoder.child_id = msg->[01;31m[Kchild_id[m[K;
+      |                                                    [01;31m[K^~~~~~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:126:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kctrl[m[K’
+  126 |                     motor_uart_encoder.ctrl[i] = msg->[01;31m[Kctrl[m[K[i];
+      |                                                       [01;31m[K^~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:128:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct kk_driver_msg::msg::MotorCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kctrl[m[K’
+  128 |                     if (msg->[01;31m[Kctrl[m[K[i] == 1){
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:[m[K In lambda function:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:169:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  169 |         [&]([01;35m[Kconst kk_driver_msg::msg::Gm6020Cmd::SharedPtr msg[m[K){
+      |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+gmake[2]: *** [CMakeFiles/kk_driver.dir/build.make:76: CMakeFiles/kk_driver.dir/src/driver.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/kk_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,21 @@
+[8.742s] Invoking command in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_receiver build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log --single-version-externally-managed install_data
+[11.742s] running egg_info
+[11.749s] writing ../build/kk_receiver/kk_receiver.egg-info/PKG-INFO
+[11.751s] writing dependency_links to ../build/kk_receiver/kk_receiver.egg-info/dependency_links.txt
+[11.753s] writing entry points to ../build/kk_receiver/kk_receiver.egg-info/entry_points.txt
+[11.755s] writing requirements to ../build/kk_receiver/kk_receiver.egg-info/requires.txt
+[11.756s] writing top-level names to ../build/kk_receiver/kk_receiver.egg-info/top_level.txt
+[11.775s] reading manifest file '../build/kk_receiver/kk_receiver.egg-info/SOURCES.txt'
+[11.784s] writing manifest file '../build/kk_receiver/kk_receiver.egg-info/SOURCES.txt'
+[11.789s] running build
+[11.790s] running build_py
+[11.794s] running install
+[11.795s] running install_lib
+[11.809s] running install_data
+[11.813s] running install_egg_info
+[11.830s] removing '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages/kk_receiver-0.0.0-py3.10.egg-info' (and everything under it)
+[11.835s] Copying ../build/kk_receiver/kk_receiver.egg-info to /home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages/kk_receiver-0.0.0-py3.10.egg-info
+[11.849s] running install_scripts
+[12.073s] Installing kk_receiver script to /home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/kk_receiver
+[12.075s] writing list of installed files to '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log'
+[12.286s] Invoked command in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver' returned '0': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_receiver build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log --single-version-externally-managed install_data

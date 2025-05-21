@@ -1,3 +1,3 @@
-uint8 child_id
+uint8[] port
 uint32[] pos
 uint32[] spd

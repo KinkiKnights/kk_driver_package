@@ -1,3 +1,4 @@
+from ament_index_python.packages import get_package_share_directory
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -53,7 +54,8 @@ class ServoSimulator(Node):
 
     def cmd_callback(self, msg):
         # Update state based on the received message
-        child_id = msg.child_id
+        # child_id = msg.child_id
+        child_id = 0
         for port, pos, spd in zip(msg.port, msg.pos, msg.spd):
             if (spd == 0):
                 continue;

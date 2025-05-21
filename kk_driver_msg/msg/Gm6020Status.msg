@@ -1,3 +1,3 @@
-int32[8] position
-int16[8] speed
-int16[8] current
+int32[7] position
+int16[7] speed
+int16[7] torque

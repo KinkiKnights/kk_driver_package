@@ -1,0 +1,56 @@
+[35m[1mConsolidate compiler generated dependencies of target kk_driver[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/kk_driver.dir/src/driver.cpp.o[0m
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:1[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:[m[K In constructor ‘[01m[KUART::UART()[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:26:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KUART::buffer_tail_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   26 |     size_t [01;35m[Kbuffer_tail_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:23:23:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::atomic<bool> UART::running_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   23 |     std::atomic<bool> [01;35m[Krunning_[m[K;
+      |                       [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:1[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/uart.hpp:64:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   64 |     [01;35m[KUART[m[K(): ring_buffer_(BUFFER_SIZE), buffer_head_(0), buffer_tail_(0), running_(false), buffer_overflowed_(false)
+      |     [01;35m[K^~~~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:3[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epb.hpp:[m[K In static member function ‘[01m[Kstatic bool EPB::Can::isMe(CanMessage&, uint16_t&)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epb.hpp:27:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   27 |         inline static bool isMe(CanMessage& msg, [01;35m[Kuint16_t& id[m[K){
+      |                                                  [01;35m[K~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:4[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epbfb.hpp:[m[K In static member function ‘[01m[Kstatic bool EPBFeedBack::Can::isMe(CanMessage&, uint16_t&)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/epbfb.hpp:27:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   27 |         inline static bool isMe(CanMessage& msg, [01;35m[Kuint16_t& id[m[K){
+      |                                                  [01;35m[K~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/_protocol.hpp:8[m[K,
+                 from [01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:19[m[K:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/c610.hpp:[m[K In member function ‘[01m[KCanMessage C610::Can::encode(uint16_t, uint8_t)[m[K’:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/../include/protocol/c610.hpp:44:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kchild_id[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   44 |         CanMessage encode([01;35m[Kuint16_t child_id[m[K, uint8_t port = 0){
+      |                           [01;35m[K~~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:[m[K In lambda function:
+[01m[K/home/kk/kk_ws/src/kk_driver_package/kk_driver/src/driver.cpp:169:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  169 |         [&]([01;35m[Kconst kk_driver_msg::msg::Gm6020Cmd::SharedPtr msg[m[K){
+      |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[100%] [32m[1mLinking CXX executable kk_driver[0m
+[100%] Built target kk_driver
+-- Install configuration: ""
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/kk_driver/kk_driver
+-- Set runtime path of "/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/kk_driver/kk_driver" to ""
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/package_run_dependencies/kk_driver
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/parent_prefix_path/kk_driver
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/ament_prefix_path.sh
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/ament_prefix_path.dsv
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/path.sh
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/path.dsv
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.bash
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.sh
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.zsh
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.dsv
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.dsv
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/packages/kk_driver
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/cmake/kk_driverConfig.cmake
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/cmake/kk_driverConfig-version.cmake
+-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.xml

@@ -2,6 +2,7 @@
 // ROS2関連ライブラリ
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <vector>
 #include "kk_driver_msg/msg/epb_cmd.hpp"
 #include "kk_driver_msg/msg/pwm_cmd.hpp"
 #include "kk_driver_msg/msg/motor_cmd.hpp"
@@ -11,6 +12,8 @@
 #include "kk_driver_msg/msg/encoder.hpp"
 #include "kk_driver_msg/msg/c610_cmd.hpp"
 #include "kk_driver_msg/msg/c610_status.hpp"
+#include "kk_driver_msg/msg/gm6020_cmd.hpp"
+#include "kk_driver_msg/msg/gm6020_status.hpp"
 #include "kk_driver_msg/msg/core.hpp"
 
 #include "../include/protocol/_protocol.hpp"
@@ -22,9 +25,11 @@ private:
     rclcpp::Subscription<kk_driver_msg::msg::MotorCmd>::SharedPtr motor_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::BldcCmd>::SharedPtr bldc_cmd_sub;
     rclcpp::Subscription<kk_driver_msg::msg::C610Cmd>::SharedPtr c610_cmd_sub;
+    rclcpp::Subscription<kk_driver_msg::msg::Gm6020Cmd>::SharedPtr gm6020_cmd_sub;
     rclcpp::Publisher<kk_driver_msg::msg::PwmStatus>::SharedPtr pwm_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::Encoder>::SharedPtr encoder_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::C610Status>::SharedPtr c610_status_pub;
+    rclcpp::Publisher<kk_driver_msg::msg::Gm6020Status>::SharedPtr gm6020_status_pub;
     rclcpp::Publisher<kk_driver_msg::msg::Core>::SharedPtr core_pub;
 
 private:
@@ -37,7 +42,9 @@ private:
     C610::Serial c610_uart_encoder;
     C610_FB::Serial c610_status_uart_encoder;
     rclcpp::TimerBase::SharedPtr timer_;
-    
+
+    // 返り値用CanMsg
+    std::vector<kk_driver_msg::msg::Gm6020Status> gm6020_backmsg{kk_driver_msg::msg::Gm6020Status{}};
 
     void update(){
         uint8_t frames[200];
@@ -82,6 +89,11 @@ private:
                 }
                 c610_status_pub->publish(msg);
             }
+        }
+
+        // 基板状態アンサーバック
+        for (uint8_t msg_idx = 0; msg_idx < (uint8_t)gm6020_backmsg.size(); msg_idx++){
+            gm6020_status_pub->publish(gm6020_backmsg[msg_idx]);
         }
     }
 public:
@@ -153,17 +165,22 @@ public:
                 serial.sendFrame(frame, c610_uart_encoder.encode(frame));
             }
         );
+        gm6020_cmd_sub =  this->create_subscription<kk_driver_msg::msg::Gm6020Cmd>("gm6020/cmd", rclcpp::QoS(10),
+        [&](const kk_driver_msg::msg::Gm6020Cmd::SharedPtr msg){
+
+        }        
+    );
 
         // 基板状態を送信するPublisherを初期化
         pwm_status_pub = this->create_publisher<kk_driver_msg::msg::PwmStatus>("pwm/position", rclcpp::QoS(1));
         encoder_status_pub = this->create_publisher<kk_driver_msg::msg::Encoder>("mtr/encoder", rclcpp::QoS(1));
         c610_status_pub = this->create_publisher<kk_driver_msg::msg::C610Status>("c610/status", rclcpp::QoS(1));
+        gm6020_status_pub = this->create_publisher<kk_driver_msg::msg::Gm6020Status>("gm6020/status", rclcpp::QoS(1));
         core_pub = this->create_publisher<kk_driver_msg::msg::Core>("core", rclcpp::QoS(1));
 
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(50), // 1秒ごとに実行
+            std::chrono::milliseconds(10), // 0.01秒ごとに実行
             std::bind(&DriverNode::update, this));
-
     }
 
 };

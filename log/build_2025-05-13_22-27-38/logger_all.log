@@ -1,0 +1,301 @@
+[1.278s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.279s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb8863d90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb899d240>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb899d240>>)
+[3.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.347s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kk/kk_ws/src/kk_driver_package'
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.347s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.348s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.348s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.348s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.348s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.348s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.349s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.349s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.395s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[3.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[3.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[3.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[3.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[3.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[3.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[3.399s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[3.399s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extensions ['ignore', 'ignore_ament_install']
+[3.399s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extension 'ignore'
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extension 'ignore_ament_install'
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extensions ['colcon_pkg']
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extension 'colcon_pkg'
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extensions ['colcon_meta']
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extension 'colcon_meta'
+[3.400s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extensions ['ros']
+[3.401s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver) by extension 'ros'
+[3.409s] DEBUG:colcon.colcon_core.package_identification:Package 'kk_driver' with type 'ros.ament_cmake' and name 'kk_driver'
+[3.409s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extensions ['ignore', 'ignore_ament_install']
+[3.410s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extension 'ignore'
+[3.410s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extension 'ignore_ament_install'
+[3.410s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extensions ['colcon_pkg']
+[3.411s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extension 'colcon_pkg'
+[3.411s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extensions ['colcon_meta']
+[3.411s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extension 'colcon_meta'
+[3.411s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extensions ['ros']
+[3.411s] Level 1:colcon.colcon_core.package_identification:_identify(kk_driver_msg) by extension 'ros'
+[3.413s] DEBUG:colcon.colcon_core.package_identification:Package 'kk_driver_msg' with type 'ros.ament_cmake' and name 'kk_driver_msg'
+[3.414s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extensions ['ignore', 'ignore_ament_install']
+[3.414s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extension 'ignore'
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extension 'ignore_ament_install'
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extensions ['colcon_pkg']
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extension 'colcon_pkg'
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extensions ['colcon_meta']
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extension 'colcon_meta'
+[3.415s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extensions ['ros']
+[3.416s] Level 1:colcon.colcon_core.package_identification:_identify(kk_receiver) by extension 'ros'
+[3.418s] DEBUG:colcon.colcon_core.package_identification:Package 'kk_receiver' with type 'ros.ament_python' and name 'kk_receiver'
+[3.418s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extensions ['ignore', 'ignore_ament_install']
+[3.419s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extension 'ignore'
+[3.419s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extension 'ignore_ament_install'
+[3.419s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extensions ['colcon_pkg']
+[3.420s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extension 'colcon_pkg'
+[3.420s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extensions ['colcon_meta']
+[3.420s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extension 'colcon_meta'
+[3.420s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extensions ['ros']
+[3.420s] Level 1:colcon.colcon_core.package_identification:_identify(kk_simulator) by extension 'ros'
+[3.423s] DEBUG:colcon.colcon_core.package_identification:Package 'kk_simulator' with type 'ros.ament_python' and name 'kk_simulator'
+[3.424s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.424s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[3.424s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[3.424s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[3.425s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[3.425s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[3.425s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[3.425s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.600s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.630s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/kk/kk_ws/install
+[3.658s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/humble
+[3.748s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[4.280s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_args' from command line to 'None'
+[4.281s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_target' from command line to 'None'
+[4.281s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.281s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_clean_cache' from command line to 'False'
+[4.282s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_clean_first' from command line to 'False'
+[4.282s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'cmake_force_configure' from command line to 'False'
+[4.282s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'ament_cmake_args' from command line to 'None'
+[4.283s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'catkin_cmake_args' from command line to 'None'
+[4.283s] Level 5:colcon.colcon_core.verb:set package 'kk_driver_msg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.284s] DEBUG:colcon.colcon_core.verb:Building package 'kk_driver_msg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg', 'merge_install': False, 'path': '/home/kk/kk_ws/src/kk_driver_package/kk_driver_msg', 'symlink_install': False, 'test_result_base': None}
+[4.288s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_args' from command line to 'None'
+[4.289s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_target' from command line to 'None'
+[4.289s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.290s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_clean_cache' from command line to 'False'
+[4.290s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_clean_first' from command line to 'False'
+[4.290s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'cmake_force_configure' from command line to 'False'
+[4.291s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'ament_cmake_args' from command line to 'None'
+[4.291s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'catkin_cmake_args' from command line to 'None'
+[4.291s] Level 5:colcon.colcon_core.verb:set package 'kk_simulator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.292s] DEBUG:colcon.colcon_core.verb:Building package 'kk_simulator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator', 'merge_install': False, 'path': '/home/kk/kk_ws/src/kk_driver_package/kk_simulator', 'symlink_install': False, 'test_result_base': None}
+[4.296s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_args' from command line to 'None'
+[4.297s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_target' from command line to 'None'
+[4.297s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.298s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[4.298s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_clean_first' from command line to 'False'
+[4.298s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'cmake_force_configure' from command line to 'False'
+[4.299s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'ament_cmake_args' from command line to 'None'
+[4.299s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[4.299s] Level 5:colcon.colcon_core.verb:set package 'kk_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.300s] DEBUG:colcon.colcon_core.verb:Building package 'kk_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver', 'merge_install': False, 'path': '/home/kk/kk_ws/src/kk_driver_package/kk_driver', 'symlink_install': False, 'test_result_base': None}
+[4.304s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_args' from command line to 'None'
+[4.305s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_target' from command line to 'None'
+[4.305s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.306s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_clean_cache' from command line to 'False'
+[4.306s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_clean_first' from command line to 'False'
+[4.306s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'cmake_force_configure' from command line to 'False'
+[4.307s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'ament_cmake_args' from command line to 'None'
+[4.307s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'catkin_cmake_args' from command line to 'None'
+[4.307s] Level 5:colcon.colcon_core.verb:set package 'kk_receiver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.308s] DEBUG:colcon.colcon_core.verb:Building package 'kk_receiver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver', 'merge_install': False, 'path': '/home/kk/kk_ws/src/kk_driver_package/kk_receiver', 'symlink_install': False, 'test_result_base': None}
+[4.309s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[4.318s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[4.320s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kk/kk_ws/src/kk_driver_package/kk_driver_msg' with build type 'ament_cmake'
+[4.322s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kk/kk_ws/src/kk_driver_package/kk_driver_msg'
+[4.353s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[4.356s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.357s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.415s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator' with build type 'ament_python'
+[4.418s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_simulator', 'ament_prefix_path')
+[4.420s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/ament_prefix_path.ps1'
+[4.430s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/ament_prefix_path.dsv'
+[4.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/ament_prefix_path.sh'
+[4.450s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.452s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.564s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble /usr/bin/cmake --build /home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg -- -j4 -l4
+[8.506s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator'
+[8.509s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.510s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.405s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator': PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_simulator build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log --single-version-externally-managed install_data
+[17.591s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator' returned '0': PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_simulator build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log --single-version-externally-managed install_data
+[17.621s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator' for CMake module files
+[17.634s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator' for CMake config files
+[17.650s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib'
+[17.653s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/bin'
+[17.654s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/pkgconfig/kk_simulator.pc'
+[17.657s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages'
+[17.658s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_simulator', 'pythonpath')
+[17.661s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/pythonpath.ps1'
+[17.667s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/pythonpath.dsv'
+[17.673s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/hook/pythonpath.sh'
+[17.681s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/bin'
+[17.682s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_simulator)
+[17.685s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/package.ps1'
+[17.698s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/package.dsv'
+[17.706s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/package.sh'
+[17.715s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/package.bash'
+[17.724s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/package.zsh'
+[17.733s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/colcon-core/packages/kk_simulator)
+[194.952s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble /usr/bin/cmake --build /home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg -- -j4 -l4
+[195.178s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble /usr/bin/cmake --install /home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg
+[197.868s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_driver_msg)
+[197.871s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg' for CMake module files
+[197.876s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble /usr/bin/cmake --install /home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg
+[197.887s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg' for CMake config files
+[197.898s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver_msg', 'cmake_prefix_path')
+[197.901s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.ps1'
+[197.906s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.dsv'
+[197.911s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.sh'
+[197.918s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib'
+[197.920s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver_msg', 'ld_library_path_lib')
+[197.923s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.ps1'
+[197.928s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.dsv'
+[197.933s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.sh'
+[197.939s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/bin'
+[197.940s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/pkgconfig/kk_driver_msg.pc'
+[197.943s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/python3.10/site-packages'
+[197.946s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/bin'
+[197.949s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.ps1'
+[197.955s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.dsv'
+[197.962s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.sh'
+[197.967s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.bash'
+[197.972s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.zsh'
+[197.977s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/colcon-core/packages/kk_driver_msg)
+[197.985s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_driver_msg)
+[197.987s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg' for CMake module files
+[198.000s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg' for CMake config files
+[198.011s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver_msg', 'cmake_prefix_path')
+[198.013s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.ps1'
+[198.018s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.dsv'
+[198.023s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/cmake_prefix_path.sh'
+[198.030s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib'
+[198.032s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver_msg', 'ld_library_path_lib')
+[198.034s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.ps1'
+[198.040s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.dsv'
+[198.049s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/hook/ld_library_path_lib.sh'
+[198.056s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/bin'
+[198.057s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/pkgconfig/kk_driver_msg.pc'
+[198.060s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/python3.10/site-packages'
+[198.062s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/bin'
+[198.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.ps1'
+[198.073s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.dsv'
+[198.080s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.sh'
+[198.087s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.bash'
+[198.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.zsh'
+[198.099s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/colcon-core/packages/kk_driver_msg)
+[198.105s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kk/kk_ws/src/kk_driver_package/kk_driver' with build type 'ament_cmake'
+[198.120s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kk/kk_ws/src/kk_driver_package/kk_driver'
+[198.124s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[198.125s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[198.205s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver' with build type 'ament_python'
+[198.207s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_receiver', 'ament_prefix_path')
+[198.212s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/ament_prefix_path.ps1'
+[198.222s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/ament_prefix_path.dsv'
+[198.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/ament_prefix_path.sh'
+[198.240s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[198.245s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[198.350s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/kk/kk_ws/src/kk_driver_package/build/kk_driver -- -j4 -l4
+[201.867s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver'
+[201.870s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[201.870s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[206.916s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_receiver build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log --single-version-externally-managed install_data
+[211.156s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver' for CMake module files
+[211.160s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/kk_receiver' returned '0': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_receiver build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log --single-version-externally-managed install_data
+[211.173s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver' for CMake config files
+[211.190s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib'
+[211.193s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/bin'
+[211.197s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/pkgconfig/kk_receiver.pc'
+[211.202s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages'
+[211.204s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_receiver', 'pythonpath')
+[211.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/pythonpath.ps1'
+[211.219s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/pythonpath.dsv'
+[211.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/hook/pythonpath.sh'
+[211.240s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/bin'
+[211.242s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_receiver)
+[211.248s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/package.ps1'
+[211.257s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/package.dsv'
+[211.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/package.sh'
+[211.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/package.bash'
+[211.279s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/kk_receiver/package.zsh'
+[211.287s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/share/colcon-core/packages/kk_receiver)
+[397.344s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver' returned '0': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/kk/kk_ws/src/kk_driver_package/build/kk_driver -- -j4 -l4
+[397.364s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/kk/kk_ws/src/kk_driver_package/build/kk_driver
+[397.738s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_driver)
+[397.740s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver' for CMake module files
+[397.745s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver' returned '0': AMENT_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble LD_LIBRARY_PATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/kk/kk_ws/src/kk_driver_package/build/kk_driver
+[397.752s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver' for CMake config files
+[397.756s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver', 'cmake_prefix_path')
+[397.759s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.ps1'
+[397.764s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.dsv'
+[397.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.sh'
+[397.774s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib'
+[397.775s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/bin'
+[397.776s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/pkgconfig/kk_driver.pc'
+[397.778s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/python3.10/site-packages'
+[397.780s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/bin'
+[397.783s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.ps1'
+[397.788s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.dsv'
+[397.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.sh'
+[397.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.bash'
+[397.802s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.zsh'
+[397.807s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/colcon-core/packages/kk_driver)
+[397.813s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kk_driver)
+[397.816s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver' for CMake module files
+[397.825s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver' for CMake config files
+[397.829s] Level 1:colcon.colcon_core.shell:create_environment_hook('kk_driver', 'cmake_prefix_path')
+[397.831s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.ps1'
+[397.836s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.dsv'
+[397.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/hook/cmake_prefix_path.sh'
+[397.846s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib'
+[397.848s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/bin'
+[397.848s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/pkgconfig/kk_driver.pc'
+[397.850s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/python3.10/site-packages'
+[397.853s] Level 1:colcon.colcon_core.environment:checking '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/bin'
+[397.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.ps1'
+[397.862s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.dsv'
+[397.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.sh'
+[397.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.bash'
+[397.880s] INFO:colcon.colcon_core.shell:Creating package script '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.zsh'
+[397.884s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/colcon-core/packages/kk_driver)
+[397.887s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[397.892s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[397.893s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[397.894s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[397.954s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[397.955s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[397.956s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[397.957s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[397.967s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[397.968s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[397.971s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kk/kk_ws/src/kk_driver_package/install/local_setup.ps1'
+[397.983s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kk/kk_ws/src/kk_driver_package/install/_local_setup_util_ps1.py'
+[398.000s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kk/kk_ws/src/kk_driver_package/install/setup.ps1'
+[398.015s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kk/kk_ws/src/kk_driver_package/install/local_setup.sh'
+[398.022s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kk/kk_ws/src/kk_driver_package/install/_local_setup_util_sh.py'
+[398.030s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kk/kk_ws/src/kk_driver_package/install/setup.sh'
+[398.048s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kk/kk_ws/src/kk_driver_package/install/local_setup.bash'
+[398.055s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kk/kk_ws/src/kk_driver_package/install/setup.bash'
+[398.071s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kk/kk_ws/src/kk_driver_package/install/local_setup.zsh'
+[398.078s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kk/kk_ws/src/kk_driver_package/install/setup.zsh'

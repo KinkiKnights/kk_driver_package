@@ -1,0 +1,23 @@
+[14.958s] Invoking command in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator': PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_simulator build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log --single-version-externally-managed install_data
+[18.524s] running egg_info
+[18.533s] writing ../build/kk_simulator/kk_simulator.egg-info/PKG-INFO
+[18.538s] writing dependency_links to ../build/kk_simulator/kk_simulator.egg-info/dependency_links.txt
+[18.543s] writing entry points to ../build/kk_simulator/kk_simulator.egg-info/entry_points.txt
+[18.553s] writing requirements to ../build/kk_simulator/kk_simulator.egg-info/requires.txt
+[18.557s] writing top-level names to ../build/kk_simulator/kk_simulator.egg-info/top_level.txt
+[18.561s] reading manifest file '../build/kk_simulator/kk_simulator.egg-info/SOURCES.txt'
+[18.572s] writing manifest file '../build/kk_simulator/kk_simulator.egg-info/SOURCES.txt'
+[18.574s] running build
+[18.575s] running build_py
+[18.581s] running install
+[18.583s] running install_lib
+[18.599s] running install_data
+[18.603s] creating /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/share/kk_simulator/static
+[18.604s] running install_egg_info
+[18.623s] removing '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator-0.0.0-py3.10.egg-info' (and everything under it)
+[18.628s] Copying ../build/kk_simulator/kk_simulator.egg-info to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator-0.0.0-py3.10.egg-info
+[18.647s] running install_scripts
+[18.875s] Installing gm6020 script to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/kk_simulator
+[18.878s] Installing servo script to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/kk_simulator
+[18.882s] writing list of installed files to '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log'
+[19.131s] Invoked command in '/home/kk/kk_ws/src/kk_driver_package/kk_simulator' returned '0': PYTHONPATH=/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/kk_simulator build --build-base /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build install --record /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log --single-version-externally-managed install_data

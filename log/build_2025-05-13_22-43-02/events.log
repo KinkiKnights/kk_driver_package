@@ -1,0 +1,712 @@
+[0.000000] (-) TimerEvent: {}
+[0.001877] (kk_driver_msg) JobQueued: {'identifier': 'kk_driver_msg', 'dependencies': OrderedDict()}
+[0.002484] (kk_simulator) JobQueued: {'identifier': 'kk_simulator', 'dependencies': OrderedDict()}
+[0.003083] (kk_driver) JobQueued: {'identifier': 'kk_driver', 'dependencies': OrderedDict([('kk_driver_msg', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg')])}
+[0.003414] (kk_receiver) JobQueued: {'identifier': 'kk_receiver', 'dependencies': OrderedDict([('kk_driver_msg', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg')])}
+[0.003596] (kk_driver_msg) JobStarted: {'identifier': 'kk_driver_msg'}
+[0.033352] (kk_simulator) JobStarted: {'identifier': 'kk_simulator'}
+[0.099268] (-) TimerEvent: {}
+[0.121133] (kk_driver_msg) JobProgress: {'identifier': 'kk_driver_msg', 'progress': 'cmake'}
+[0.129066] (kk_driver_msg) JobProgress: {'identifier': 'kk_driver_msg', 'progress': 'build'}
+[0.136999] (kk_driver_msg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg', '--', '-j4', '-l4'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kk'), ('SSH_CLIENT', '192.168.0.165 51805 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kk'), ('OLDPWD', '/home/kk/kk_ws'), ('TERM_PROGRAM_VERSION', '1.99.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/kk/kk_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kk'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-fe67600511.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg'), ('SSH_CONNECTION', '192.168.0.165 51805 192.168.0.178 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble')]), 'shell': False}
+[0.199602] (-) TimerEvent: {}
+[0.301001] (-) TimerEvent: {}
+[0.402567] (-) TimerEvent: {}
+[0.505012] (-) TimerEvent: {}
+[0.607662] (-) TimerEvent: {}
+[0.710574] (-) TimerEvent: {}
+[0.816139] (-) TimerEvent: {}
+[0.870601] (kk_driver_msg) StdoutLine: {'line': b'[  0%] Built target kk_driver_msg__cpp\n'}
+[0.916522] (-) TimerEvent: {}
+[0.929552] (kk_driver_msg) StdoutLine: {'line': b'[ 12%] Built target kk_driver_msg__rosidl_generator_c\n'}
+[1.016857] (-) TimerEvent: {}
+[1.105907] (kk_driver_msg) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_kk_driver_msg\n'}
+[1.117204] (-) TimerEvent: {}
+[1.221353] (-) TimerEvent: {}
+[1.325549] (-) TimerEvent: {}
+[1.367256] (kk_driver_msg) StdoutLine: {'line': b'[ 24%] Built target kk_driver_msg__rosidl_typesupport_cpp\n'}
+[1.425960] (-) TimerEvent: {}
+[1.465015] (kk_driver_msg) StdoutLine: {'line': b'[ 36%] Built target kk_driver_msg__rosidl_typesupport_fastrtps_cpp\n'}
+[1.526275] (-) TimerEvent: {}
+[1.629003] (-) TimerEvent: {}
+[1.731831] (-) TimerEvent: {}
+[1.735964] (kk_driver_msg) StdoutLine: {'line': b'[ 48%] Built target kk_driver_msg__rosidl_typesupport_introspection_cpp\n'}
+[1.744110] (kk_driver_msg) StdoutLine: {'line': b'[ 60%] Built target kk_driver_msg__rosidl_typesupport_fastrtps_c\n'}
+[1.832147] (-) TimerEvent: {}
+[1.917856] (kk_driver_msg) StdoutLine: {'line': b'[ 72%] Built target kk_driver_msg__rosidl_typesupport_introspection_c\n'}
+[1.932465] (-) TimerEvent: {}
+[2.034174] (-) TimerEvent: {}
+[2.042377] (kk_driver_msg) StdoutLine: {'line': b'[ 84%] Built target kk_driver_msg__rosidl_typesupport_c\n'}
+[2.134492] (-) TimerEvent: {}
+[2.237476] (-) TimerEvent: {}
+[2.327320] (kk_driver_msg) StdoutLine: {'line': b'[ 84%] Built target kk_driver_msg\n'}
+[2.337926] (-) TimerEvent: {}
+[2.440867] (-) TimerEvent: {}
+[2.542532] (-) TimerEvent: {}
+[2.645111] (-) TimerEvent: {}
+[2.683675] (kk_driver_msg) StdoutLine: {'line': b'[ 85%] Built target kk_driver_msg__py\n'}
+[2.745354] (-) TimerEvent: {}
+[2.847337] (-) TimerEvent: {}
+[2.949884] (kk_driver_msg) StdoutLine: {'line': b'[ 96%] Built target kk_driver_msg__rosidl_generator_py\n'}
+[2.952142] (-) TimerEvent: {}
+[3.056107] (-) TimerEvent: {}
+[3.159914] (-) TimerEvent: {}
+[3.263996] (-) TimerEvent: {}
+[3.371549] (-) TimerEvent: {}
+[3.380349] (kk_driver_msg) StdoutLine: {'line': b'[ 98%] Built target kk_driver_msg__rosidl_typesupport_introspection_c__pyext\n'}
+[3.393282] (kk_driver_msg) StdoutLine: {'line': b'[ 99%] Built target kk_driver_msg__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.443679] (kk_driver_msg) StdoutLine: {'line': b'[100%] Built target kk_driver_msg__rosidl_typesupport_c__pyext\n'}
+[3.471850] (-) TimerEvent: {}
+[3.574098] (-) TimerEvent: {}
+[3.675479] (-) TimerEvent: {}
+[3.776921] (-) TimerEvent: {}
+[3.878790] (-) TimerEvent: {}
+[3.980361] (-) TimerEvent: {}
+[4.081962] (-) TimerEvent: {}
+[4.183669] (-) TimerEvent: {}
+[4.286891] (-) TimerEvent: {}
+[4.388812] (-) TimerEvent: {}
+[4.490905] (-) TimerEvent: {}
+[4.592406] (-) TimerEvent: {}
+[4.694696] (-) TimerEvent: {}
+[4.798801] (-) TimerEvent: {}
+[4.900326] (-) TimerEvent: {}
+[5.001865] (-) TimerEvent: {}
+[5.103499] (-) TimerEvent: {}
+[5.205161] (-) TimerEvent: {}
+[5.307921] (-) TimerEvent: {}
+[5.410766] (-) TimerEvent: {}
+[5.450068] (kk_driver_msg) StdoutLine: {'line': b'running egg_info\n'}
+[5.458958] (kk_driver_msg) StdoutLine: {'line': b'writing kk_driver_msg.egg-info/PKG-INFO\n'}
+[5.461374] (kk_driver_msg) StdoutLine: {'line': b'writing dependency_links to kk_driver_msg.egg-info/dependency_links.txt\n'}
+[5.464165] (kk_driver_msg) StdoutLine: {'line': b'writing top-level names to kk_driver_msg.egg-info/top_level.txt\n'}
+[5.493126] (kk_driver_msg) StdoutLine: {'line': b"reading manifest file 'kk_driver_msg.egg-info/SOURCES.txt'\n"}
+[5.505817] (kk_driver_msg) StdoutLine: {'line': b"writing manifest file 'kk_driver_msg.egg-info/SOURCES.txt'\n"}
+[5.512427] (-) TimerEvent: {}
+[5.617143] (-) TimerEvent: {}
+[5.719351] (-) TimerEvent: {}
+[5.781407] (kk_driver_msg) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_kk_driver_msg_egg\n'}
+[5.819623] (-) TimerEvent: {}
+[5.909036] (kk_driver_msg) CommandEnded: {'returncode': 0}
+[5.910923] (kk_driver_msg) JobProgress: {'identifier': 'kk_driver_msg', 'progress': 'install'}
+[5.919773] (-) TimerEvent: {}
+[5.943650] (kk_driver_msg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kk'), ('SSH_CLIENT', '192.168.0.165 51805 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kk'), ('OLDPWD', '/home/kk/kk_ws'), ('TERM_PROGRAM_VERSION', '1.99.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/kk/kk_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kk'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-fe67600511.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver_msg'), ('SSH_CONNECTION', '192.168.0.165 51805 192.168.0.178 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble')]), 'shell': False}
+[5.977884] (kk_driver_msg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.978760] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/ament_index/resource_index/rosidl_interfaces/kk_driver_msg\n'}
+[5.979564] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[5.980254] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[5.981388] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/key_ctrl.h\n'}
+[5.982381] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/core.h\n'}
+[5.983080] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/mouse_ctrl.h\n'}
+[5.984085] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/pwm_cmd.h\n'}
+[5.984975] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/c610_cmd.h\n'}
+[5.985377] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/bldc_cmd.h\n'}
+[5.986344] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/camera_cmd.h\n'}
+[5.987252] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/epb_cmd.h\n'}
+[5.988211] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/motor_cmd.h\n'}
+[5.989412] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/epb_status.h\n'}
+[5.990623] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/encoder.h\n'}
+[5.991879] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/rosidl_generator_c__visibility_control.h\n'}
+[5.993156] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/gm6020_cmd.h\n'}
+[5.993970] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[5.996903] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__functions.c\n'}
+[5.998142] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__type_support.h\n'}
+[5.999124] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__struct.h\n'}
+[6.000324] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__type_support.h\n'}
+[6.002417] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__type_support.h\n'}
+[6.004742] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__type_support.h\n'}
+[6.007400] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__type_support.h\n'}
+[6.009845] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__struct.h\n'}
+[6.012127] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__functions.c\n'}
+[6.014420] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__struct.h\n'}
+[6.016376] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__type_support.h\n'}
+[6.019390] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__struct.h\n'}
+[6.020387] (-) TimerEvent: {}
+[6.023851] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__functions.c\n'}
+[6.049383] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__functions.c\n'}
+[6.053069] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__functions.c\n'}
+[6.054530] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__functions.c\n'}
+[6.060719] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__type_support.h\n'}
+[6.062861] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__struct.h\n'}
+[6.066092] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__struct.h\n'}
+[6.067219] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__functions.h\n'}
+[6.068604] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__struct.h\n'}
+[6.070043] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__functions.h\n'}
+[6.071164] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__functions.c\n'}
+[6.072665] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__functions.h\n'}
+[6.074216] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__type_support.h\n'}
+[6.075559] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__type_support.h\n'}
+[6.076877] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__functions.h\n'}
+[6.078313] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__type_support.h\n'}
+[6.079639] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__type_support.h\n'}
+[6.080870] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__functions.c\n'}
+[6.082305] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__functions.c\n'}
+[6.083378] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__functions.h\n'}
+[6.084626] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__functions.h\n'}
+[6.086154] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__functions.h\n'}
+[6.087606] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__functions.h\n'}
+[6.088938] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__functions.h\n'}
+[6.090267] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__type_support.h\n'}
+[6.091563] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__struct.h\n'}
+[6.092576] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__type_support.h\n'}
+[6.094065] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__struct.h\n'}
+[6.102582] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__functions.c\n'}
+[6.104359] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__functions.c\n'}
+[6.105822] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__struct.h\n'}
+[6.107290] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__functions.h\n'}
+[6.108574] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__struct.h\n'}
+[6.109980] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__struct.h\n'}
+[6.111265] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__functions.h\n'}
+[6.112550] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__functions.h\n'}
+[6.113747] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__functions.c\n'}
+[6.115344] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__functions.c\n'}
+[6.116373] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__functions.h\n'}
+[6.117362] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__struct.h\n'}
+[6.118837] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__functions.h\n'}
+[6.119993] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__functions.h\n'}
+[6.120952] (-) TimerEvent: {}
+[6.122752] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__functions.c\n'}
+[6.123973] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__type_support.h\n'}
+[6.125067] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__struct.h\n'}
+[6.126610] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__type_support.h\n'}
+[6.131244] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__functions.c\n'}
+[6.132829] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__struct.h\n'}
+[6.134849] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/pwm_status.h\n'}
+[6.136367] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/c610_status.h\n'}
+[6.137811] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/gm6020_status.h\n'}
+[6.139218] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/library_path.sh\n'}
+[6.140592] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/library_path.dsv\n'}
+[6.142032] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_generator_c.so\n'}
+[6.143497] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[6.144825] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[6.146224] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.147790] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[6.149479] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__rosidl_typesupport_fastrtps_c.h\n'}
+[6.151182] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__rosidl_typesupport_fastrtps_c.h\n'}
+[6.152560] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__rosidl_typesupport_fastrtps_c.h\n'}
+[6.153722] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__rosidl_typesupport_fastrtps_c.h\n'}
+[6.155701] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__rosidl_typesupport_fastrtps_c.h\n'}
+[6.160609] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.162022] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.163411] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__rosidl_typesupport_fastrtps_c.h\n'}
+[6.164745] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.166085] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.167307] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__rosidl_typesupport_fastrtps_c.h\n'}
+[6.168584] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.170010] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.171371] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[6.172670] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__rosidl_typesupport_fastrtps_c.h\n'}
+[6.174096] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_fastrtps_c.so\n'}
+[6.175457] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[6.176749] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[6.178090] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[6.179360] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__type_support.c\n'}
+[6.180847] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__rosidl_typesupport_introspection_c.h\n'}
+[6.182381] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__type_support.c\n'}
+[6.187173] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.188633] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__rosidl_typesupport_introspection_c.h\n'}
+[6.191475] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__type_support.c\n'}
+[6.193186] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.194842] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__type_support.c\n'}
+[6.196032] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__rosidl_typesupport_introspection_c.h\n'}
+[6.197164] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__type_support.c\n'}
+[6.199002] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.201205] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__type_support.c\n'}
+[6.202665] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.203904] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.205104] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__type_support.c\n'}
+[6.207755] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__rosidl_typesupport_introspection_c.h\n'}
+[6.209867] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.211649] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__type_support.c\n'}
+[6.212884] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__rosidl_typesupport_introspection_c.h\n'}
+[6.214163] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__rosidl_typesupport_introspection_c.h\n'}
+[6.215343] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__rosidl_typesupport_introspection_c.h\n'}
+[6.216487] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__rosidl_typesupport_introspection_c.h\n'}
+[6.217725] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__type_support.c\n'}
+[6.219022] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__rosidl_typesupport_introspection_c.h\n'}
+[6.220279] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__type_support.c\n'}
+[6.221385] (-) TimerEvent: {}
+[6.223708] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__type_support.c\n'}
+[6.225077] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__type_support.c\n'}
+[6.226912] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__type_support.c\n'}
+[6.232834] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__type_support.c\n'}
+[6.234137] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__type_support.c\n'}
+[6.235376] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.237290] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_introspection_c.so\n'}
+[6.239927] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_c.so\n'}
+[6.241467] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[6.243425] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[6.244574] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/pwm_cmd.hpp\n'}
+[6.245812] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/gm6020_status.hpp\n'}
+[6.246985] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/core.hpp\n'}
+[6.248106] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/pwm_status.hpp\n'}
+[6.249287] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/encoder.hpp\n'}
+[6.250614] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/motor_cmd.hpp\n'}
+[6.252027] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/key_ctrl.hpp\n'}
+[6.253277] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/c610_cmd.hpp\n'}
+[6.255350] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/bldc_cmd.hpp\n'}
+[6.257263] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/c610_status.hpp\n'}
+[6.259302] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/camera_cmd.hpp\n'}
+[6.262080] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/epb_status.hpp\n'}
+[6.263898] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[6.265970] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__builder.hpp\n'}
+[6.268882] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__type_support.hpp\n'}
+[6.271432] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__builder.hpp\n'}
+[6.273284] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__builder.hpp\n'}
+[6.275068] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__struct.hpp\n'}
+[6.276716] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__builder.hpp\n'}
+[6.278125] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__struct.hpp\n'}
+[6.279579] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__traits.hpp\n'}
+[6.281253] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__struct.hpp\n'}
+[6.283255] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__builder.hpp\n'}
+[6.285826] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__builder.hpp\n'}
+[6.288090] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__traits.hpp\n'}
+[6.290340] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__type_support.hpp\n'}
+[6.292035] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__type_support.hpp\n'}
+[6.293528] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__struct.hpp\n'}
+[6.294744] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__traits.hpp\n'}
+[6.295761] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__type_support.hpp\n'}
+[6.297099] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__type_support.hpp\n'}
+[6.298831] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__struct.hpp\n'}
+[6.299953] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__traits.hpp\n'}
+[6.301254] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__builder.hpp\n'}
+[6.303170] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__struct.hpp\n'}
+[6.304570] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__struct.hpp\n'}
+[6.305556] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__struct.hpp\n'}
+[6.307645] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__traits.hpp\n'}
+[6.309933] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__traits.hpp\n'}
+[6.312002] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__traits.hpp\n'}
+[6.314213] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__traits.hpp\n'}
+[6.316445] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__traits.hpp\n'}
+[6.318743] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__type_support.hpp\n'}
+[6.321319] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__traits.hpp\n'}
+[6.323321] (-) TimerEvent: {}
+[6.326464] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__builder.hpp\n'}
+[6.328589] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__type_support.hpp\n'}
+[6.335880] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__builder.hpp\n'}
+[6.337961] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__traits.hpp\n'}
+[6.339064] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__type_support.hpp\n'}
+[6.340142] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__traits.hpp\n'}
+[6.341981] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__struct.hpp\n'}
+[6.343258] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__builder.hpp\n'}
+[6.344430] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__struct.hpp\n'}
+[6.345451] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__type_support.hpp\n'}
+[6.346621] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__type_support.hpp\n'}
+[6.348621] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__traits.hpp\n'}
+[6.350324] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__builder.hpp\n'}
+[6.351912] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__type_support.hpp\n'}
+[6.354625] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__traits.hpp\n'}
+[6.356384] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__struct.hpp\n'}
+[6.358112] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__struct.hpp\n'}
+[6.359204] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__type_support.hpp\n'}
+[6.360203] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__builder.hpp\n'}
+[6.361936] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__struct.hpp\n'}
+[6.363042] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__builder.hpp\n'}
+[6.364019] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__struct.hpp\n'}
+[6.365807] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__type_support.hpp\n'}
+[6.366924] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__type_support.hpp\n'}
+[6.367891] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__type_support.hpp\n'}
+[6.369546] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__traits.hpp\n'}
+[6.370743] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__builder.hpp\n'}
+[6.371744] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__builder.hpp\n'}
+[6.373526] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__struct.hpp\n'}
+[6.375395] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[6.377051] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/mouse_ctrl.hpp\n'}
+[6.379143] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/epb_cmd.hpp\n'}
+[6.381417] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/gm6020_cmd.hpp\n'}
+[6.383167] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[6.384765] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[6.386973] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.389647] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[6.392171] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/dds_fastrtps\n'}
+[6.395452] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.398676] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.401462] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.403801] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.408212] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.410673] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.412820] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.414122] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.415325] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.416339] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.417414] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.418606] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.419672] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.420837] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.422040] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.423040] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.423899] (-) TimerEvent: {}
+[6.425878] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg\n'}
+[6.427080] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg\n'}
+[6.428078] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail\n'}
+[6.429089] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.433002] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.435594] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/key_ctrl__type_support.cpp\n'}
+[6.436742] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__type_support.cpp\n'}
+[6.437858] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.439257] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_status__type_support.cpp\n'}
+[6.440405] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.441465] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__type_support.cpp\n'}
+[6.442993] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.444193] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__type_support.cpp\n'}
+[6.445333] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__type_support.cpp\n'}
+[6.446619] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__type_support.cpp\n'}
+[6.447669] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/c610_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.448660] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__type_support.cpp\n'}
+[6.449706] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.450829] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/pwm_cmd__type_support.cpp\n'}
+[6.451940] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__type_support.cpp\n'}
+[6.452980] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.454098] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__type_support.cpp\n'}
+[6.455195] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/gm6020_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.456287] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__type_support.cpp\n'}
+[6.457394] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/motor_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.458588] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/mouse_ctrl__type_support.cpp\n'}
+[6.459652] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/camera_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.460676] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/core__type_support.cpp\n'}
+[6.461855] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.462913] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.463867] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/epb_status__type_support.cpp\n'}
+[6.464805] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/encoder__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.465931] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/include/kk_driver_msg/kk_driver_msg/msg/detail/bldc_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.467064] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_introspection_cpp.so\n'}
+[6.468071] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_typesupport_cpp.so\n'}
+[6.468936] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/pythonpath.sh\n'}
+[6.469947] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/pythonpath.dsv\n'}
+[6.471083] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg-0.0.1-py3.10.egg-info\n'}
+[6.472063] (kk_driver_msg) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[6.472940] (kk_driver_msg) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[6.473918] (kk_driver_msg) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[6.474867] (kk_driver_msg) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[6.475777] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg\n'}
+[6.476823] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/__init__.py\n'}
+[6.477876] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.479128] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/libkk_driver_msg__rosidl_generator_py.so\n'}
+[6.480116] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.481079] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/_kk_driver_msg_s.ep.rosidl_typesupport_c.c\n'}
+[6.482074] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.483035] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/_kk_driver_msg_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.484012] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg\n'}
+[6.485031] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_gm6020_status_s.c\n'}
+[6.486228] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_c610_status_s.c\n'}
+[6.487499] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/__init__.py\n'}
+[6.489514] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_encoder.py\n'}
+[6.490992] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_pwm_cmd.py\n'}
+[6.492090] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_motor_cmd_s.c\n'}
+[6.493129] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_key_ctrl_s.c\n'}
+[6.494197] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_c610_cmd.py\n'}
+[6.495214] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_pwm_status.py\n'}
+[6.496228] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_epb_cmd_s.c\n'}
+[6.497431] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_camera_cmd.py\n'}
+[6.498777] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_bldc_cmd.py\n'}
+[6.499874] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_core.py\n'}
+[6.500909] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_encoder_s.c\n'}
+[6.502055] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_epb_status.py\n'}
+[6.503158] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_core_s.c\n'}
+[6.504134] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_gm6020_status.py\n'}
+[6.505170] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_gm6020_cmd.py\n'}
+[6.506369] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_motor_cmd.py\n'}
+[6.507430] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_mouse_ctrl.py\n'}
+[6.508484] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_epb_cmd.py\n'}
+[6.509531] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_mouse_ctrl_s.c\n'}
+[6.510720] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_c610_status.py\n'}
+[6.511886] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_camera_cmd_s.c\n'}
+[6.512864] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_key_ctrl.py\n'}
+[6.513994] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_epb_status_s.c\n'}
+[6.515111] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_pwm_status_s.c\n'}
+[6.516056] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_bldc_cmd_s.c\n'}
+[6.517048] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_gm6020_cmd_s.c\n'}
+[6.518400] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_c610_cmd_s.c\n'}
+[6.519539] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg/_pwm_cmd_s.c\n'}
+[6.520620] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/_kk_driver_msg_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.524171] (-) TimerEvent: {}
+[6.626866] (-) TimerEvent: {}
+[6.729561] (-) TimerEvent: {}
+[6.831194] (-) TimerEvent: {}
+[6.863500] (kk_driver_msg) StdoutLine: {'line': b"Listing '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg'...\n"}
+[6.865679] (kk_driver_msg) StdoutLine: {'line': b"Listing '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/msg'...\n"}
+[6.916069] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.924656] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.931514] (-) TimerEvent: {}
+[6.937136] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages/kk_driver_msg/kk_driver_msg_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[6.949226] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib/libkk_driver_msg__rosidl_generator_py.so\n'}
+[6.956390] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/EpbCmd.idl\n'}
+[6.960631] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/PwmCmd.idl\n'}
+[6.964638] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/MotorCmd.idl\n'}
+[6.969188] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/BldcCmd.idl\n'}
+[6.973329] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/C610Cmd.idl\n'}
+[6.977329] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/C610Status.idl\n'}
+[6.980849] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Gm6020Cmd.idl\n'}
+[6.985237] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Gm6020Status.idl\n'}
+[6.988930] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/EpbStatus.idl\n'}
+[6.993301] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/PwmStatus.idl\n'}
+[6.997469] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Encoder.idl\n'}
+[7.001101] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/KeyCtrl.idl\n'}
+[7.007140] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Core.idl\n'}
+[7.010674] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/CameraCmd.idl\n'}
+[7.014073] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/MouseCtrl.idl\n'}
+[7.017790] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/EpbCmd.msg\n'}
+[7.021325] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/PwmCmd.msg\n'}
+[7.025124] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/MotorCmd.msg\n'}
+[7.028707] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/BldcCmd.msg\n'}
+[7.031833] (-) TimerEvent: {}
+[7.034971] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/C610Cmd.msg\n'}
+[7.042715] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/C610Status.msg\n'}
+[7.046902] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Gm6020Cmd.msg\n'}
+[7.050599] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Gm6020Status.msg\n'}
+[7.054142] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/EpbStatus.msg\n'}
+[7.057561] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/PwmStatus.msg\n'}
+[7.061091] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Encoder.msg\n'}
+[7.064343] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/KeyCtrl.msg\n'}
+[7.068142] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/Core.msg\n'}
+[7.071669] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/CameraCmd.msg\n'}
+[7.075161] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/msg/MouseCtrl.msg\n'}
+[7.078867] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/ament_index/resource_index/package_run_dependencies/kk_driver_msg\n'}
+[7.083416] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/ament_index/resource_index/parent_prefix_path/kk_driver_msg\n'}
+[7.087966] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/ament_prefix_path.sh\n'}
+[7.092385] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/ament_prefix_path.dsv\n'}
+[7.094908] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/path.sh\n'}
+[7.097030] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/environment/path.dsv\n'}
+[7.099359] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/local_setup.bash\n'}
+[7.101562] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/local_setup.sh\n'}
+[7.103624] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/local_setup.zsh\n'}
+[7.109757] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/local_setup.dsv\n'}
+[7.111026] (kk_driver_msg) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.dsv\n'}
+[7.112173] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/ament_index/resource_index/packages/kk_driver_msg\n'}
+[7.118826] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_generator_cExport.cmake\n'}
+[7.120151] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_generator_cExport-noconfig.cmake\n'}
+[7.132272] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[7.135611] (-) TimerEvent: {}
+[7.140292] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[7.141760] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[7.149743] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[7.151093] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_cExport.cmake\n'}
+[7.154136] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[7.155294] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_generator_cppExport.cmake\n'}
+[7.156729] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[7.158251] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[7.159878] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[7.160837] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[7.162267] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_cppExport.cmake\n'}
+[7.163313] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[7.164429] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_generator_pyExport.cmake\n'}
+[7.166272] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/export_kk_driver_msg__rosidl_generator_pyExport-noconfig.cmake\n'}
+[7.167472] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/rosidl_cmake-extras.cmake\n'}
+[7.169184] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.172130] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[7.175849] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[7.179617] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[7.183816] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.187756] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[7.191440] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msgConfig.cmake\n'}
+[7.194456] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/cmake/kk_driver_msgConfig-version.cmake\n'}
+[7.199177] (kk_driver_msg) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/share/kk_driver_msg/package.xml\n'}
+[7.229089] (kk_driver_msg) CommandEnded: {'returncode': 0}
+[7.235916] (-) TimerEvent: {}
+[7.337890] (-) TimerEvent: {}
+[7.440599] (-) TimerEvent: {}
+[7.531423] (kk_driver_msg) JobEnded: {'identifier': 'kk_driver_msg', 'rc': 0}
+[7.543352] (-) TimerEvent: {}
+[7.544277] (kk_driver) JobStarted: {'identifier': 'kk_driver'}
+[7.599147] (kk_receiver) JobStarted: {'identifier': 'kk_receiver'}
+[7.644085] (-) TimerEvent: {}
+[7.709726] (kk_driver) JobProgress: {'identifier': 'kk_driver', 'progress': 'cmake'}
+[7.717491] (kk_driver) JobProgress: {'identifier': 'kk_driver', 'progress': 'build'}
+[7.721376] (kk_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver', '--', '-j4', '-l4'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kk'), ('SSH_CLIENT', '192.168.0.165 51805 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kk'), ('OLDPWD', '/home/kk/kk_ws'), ('TERM_PROGRAM_VERSION', '1.99.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/kk/kk_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kk'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-fe67600511.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver'), ('SSH_CONNECTION', '192.168.0.165 51805 192.168.0.178 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble')]), 'shell': False}
+[7.749289] (-) TimerEvent: {}
+[7.855237] (-) TimerEvent: {}
+[7.957935] (-) TimerEvent: {}
+[8.061294] (-) TimerEvent: {}
+[8.165010] (-) TimerEvent: {}
+[8.270627] (-) TimerEvent: {}
+[8.393121] (-) TimerEvent: {}
+[8.499284] (-) TimerEvent: {}
+[8.605990] (-) TimerEvent: {}
+[8.612893] (kk_driver) StdoutLine: {'line': b'[100%] Built target kk_driver\n'}
+[8.706278] (-) TimerEvent: {}
+[8.810007] (-) TimerEvent: {}
+[8.911527] (-) TimerEvent: {}
+[9.014415] (-) TimerEvent: {}
+[9.116004] (-) TimerEvent: {}
+[9.217674] (-) TimerEvent: {}
+[9.319193] (-) TimerEvent: {}
+[9.420689] (-) TimerEvent: {}
+[9.522879] (-) TimerEvent: {}
+[9.624231] (-) TimerEvent: {}
+[9.725684] (-) TimerEvent: {}
+[9.827096] (-) TimerEvent: {}
+[9.928470] (-) TimerEvent: {}
+[10.029911] (-) TimerEvent: {}
+[10.131342] (-) TimerEvent: {}
+[10.232920] (-) TimerEvent: {}
+[10.335498] (-) TimerEvent: {}
+[10.437887] (-) TimerEvent: {}
+[10.539248] (-) TimerEvent: {}
+[10.640688] (-) TimerEvent: {}
+[10.742301] (-) TimerEvent: {}
+[10.843883] (-) TimerEvent: {}
+[10.945265] (-) TimerEvent: {}
+[11.046894] (-) TimerEvent: {}
+[11.148311] (-) TimerEvent: {}
+[11.249789] (-) TimerEvent: {}
+[11.351460] (-) TimerEvent: {}
+[11.453800] (-) TimerEvent: {}
+[11.554383] (kk_simulator) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/kk_simulator', 'build', '--build-base', '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build', 'install', '--record', '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/kk_simulator', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kk', 'SSH_CLIENT': '192.168.0.165 51805 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/kk', 'OLDPWD': '/home/kk/kk_ws', 'TERM_PROGRAM_VERSION': '1.99.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/kk/kk_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'kk', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-fe67600511.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator', 'SSH_CONNECTION': '192.168.0.165 51805 192.168.0.178 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg'}, 'shell': False}
+[11.574139] (-) TimerEvent: {}
+[11.578395] (kk_driver) CommandEnded: {'returncode': 0}
+[11.585376] (kk_driver) JobProgress: {'identifier': 'kk_driver', 'progress': 'install'}
+[11.596106] (kk_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kk'), ('SSH_CLIENT', '192.168.0.165 51805 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kk'), ('OLDPWD', '/home/kk/kk_ws'), ('TERM_PROGRAM_VERSION', '1.99.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/kk/kk_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kk'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-fe67600511.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kk/kk_ws/src/kk_driver_package/build/kk_driver'), ('SSH_CONNECTION', '192.168.0.165 51805 192.168.0.178 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/core_camera:/opt/ros/humble')]), 'shell': False}
+[11.674459] (-) TimerEvent: {}
+[11.691889] (kk_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[11.697851] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/lib/kk_driver/kk_driver\n'}
+[11.704258] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/package_run_dependencies/kk_driver\n'}
+[11.707740] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/parent_prefix_path/kk_driver\n'}
+[11.711207] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/ament_prefix_path.sh\n'}
+[11.712964] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/ament_prefix_path.dsv\n'}
+[11.714506] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/path.sh\n'}
+[11.716233] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/environment/path.dsv\n'}
+[11.717973] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.bash\n'}
+[11.721136] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.sh\n'}
+[11.722659] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.zsh\n'}
+[11.729211] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/local_setup.dsv\n'}
+[11.730447] (kk_driver) StdoutLine: {'line': b'-- Installing: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.dsv\n'}
+[11.732138] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/ament_index/resource_index/packages/kk_driver\n'}
+[11.733533] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/cmake/kk_driverConfig.cmake\n'}
+[11.742352] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/cmake/kk_driverConfig-version.cmake\n'}
+[11.744096] (kk_driver) StdoutLine: {'line': b'-- Up-to-date: /home/kk/kk_ws/src/kk_driver_package/install/kk_driver/share/kk_driver/package.xml\n'}
+[11.757004] (kk_driver) CommandEnded: {'returncode': 0}
+[11.775910] (-) TimerEvent: {}
+[11.879915] (-) TimerEvent: {}
+[11.963207] (kk_driver) JobEnded: {'identifier': 'kk_driver', 'rc': 0}
+[11.980220] (-) TimerEvent: {}
+[12.083057] (-) TimerEvent: {}
+[12.184146] (-) TimerEvent: {}
+[12.285779] (-) TimerEvent: {}
+[12.387200] (-) TimerEvent: {}
+[12.488776] (-) TimerEvent: {}
+[12.591203] (-) TimerEvent: {}
+[12.692652] (-) TimerEvent: {}
+[12.795149] (-) TimerEvent: {}
+[12.898102] (-) TimerEvent: {}
+[12.999491] (-) TimerEvent: {}
+[13.100868] (-) TimerEvent: {}
+[13.202266] (-) TimerEvent: {}
+[13.303631] (-) TimerEvent: {}
+[13.412981] (-) TimerEvent: {}
+[13.515394] (-) TimerEvent: {}
+[13.616729] (-) TimerEvent: {}
+[13.719141] (-) TimerEvent: {}
+[13.820497] (-) TimerEvent: {}
+[13.921874] (-) TimerEvent: {}
+[14.023523] (-) TimerEvent: {}
+[14.127713] (-) TimerEvent: {}
+[14.229401] (-) TimerEvent: {}
+[14.333331] (-) TimerEvent: {}
+[14.437203] (-) TimerEvent: {}
+[14.543456] (-) TimerEvent: {}
+[14.647509] (-) TimerEvent: {}
+[14.751474] (-) TimerEvent: {}
+[14.856320] (-) TimerEvent: {}
+[14.960074] (-) TimerEvent: {}
+[14.987461] (kk_simulator) StdoutLine: {'line': b'running egg_info\n'}
+[15.001133] (kk_simulator) StdoutLine: {'line': b'writing ../build/kk_simulator/kk_simulator.egg-info/PKG-INFO\n'}
+[15.006139] (kk_simulator) StdoutLine: {'line': b'writing dependency_links to ../build/kk_simulator/kk_simulator.egg-info/dependency_links.txt\n'}
+[15.010714] (kk_simulator) StdoutLine: {'line': b'writing entry points to ../build/kk_simulator/kk_simulator.egg-info/entry_points.txt\n'}
+[15.014691] (kk_simulator) StdoutLine: {'line': b'writing requirements to ../build/kk_simulator/kk_simulator.egg-info/requires.txt\n'}
+[15.019389] (kk_simulator) StdoutLine: {'line': b'writing top-level names to ../build/kk_simulator/kk_simulator.egg-info/top_level.txt\n'}
+[15.044834] (kk_simulator) StdoutLine: {'line': b"reading manifest file '../build/kk_simulator/kk_simulator.egg-info/SOURCES.txt'\n"}
+[15.058954] (kk_simulator) StdoutLine: {'line': b"writing manifest file '../build/kk_simulator/kk_simulator.egg-info/SOURCES.txt'\n"}
+[15.060268] (-) TimerEvent: {}
+[15.063125] (kk_simulator) StdoutLine: {'line': b'running build\n'}
+[15.064726] (kk_simulator) StdoutLine: {'line': b'running build_py\n'}
+[15.073080] (kk_simulator) StdoutLine: {'line': b'copying kk_simulator/gm6020.py -> /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build/lib/kk_simulator\n'}
+[15.078595] (kk_simulator) StdoutLine: {'line': b'running install\n'}
+[15.084886] (kk_simulator) StdoutLine: {'line': b'running install_lib\n'}
+[15.098110] (kk_simulator) StdoutLine: {'line': b'copying /home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/build/lib/kk_simulator/gm6020.py -> /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator\n'}
+[15.112506] (kk_simulator) StdoutLine: {'line': b'byte-compiling /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator/gm6020.py to gm6020.cpython-310.pyc\n'}
+[15.126948] (kk_simulator) StdoutLine: {'line': b'running install_data\n'}
+[15.136394] (kk_simulator) StdoutLine: {'line': b'running install_egg_info\n'}
+[15.160682] (-) TimerEvent: {}
+[15.168948] (kk_simulator) StdoutLine: {'line': b"removing '/home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[15.183300] (kk_simulator) StdoutLine: {'line': b'Copying ../build/kk_simulator/kk_simulator.egg-info to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/python3.10/site-packages/kk_simulator-0.0.0-py3.10.egg-info\n'}
+[15.212597] (kk_simulator) StdoutLine: {'line': b'running install_scripts\n'}
+[15.261000] (-) TimerEvent: {}
+[15.364892] (-) TimerEvent: {}
+[15.462584] (kk_simulator) StdoutLine: {'line': b'Installing gm6020 script to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/kk_simulator\n'}
+[15.465053] (-) TimerEvent: {}
+[15.469348] (kk_simulator) StdoutLine: {'line': b'Installing servo script to /home/kk/kk_ws/src/kk_driver_package/install/kk_simulator/lib/kk_simulator\n'}
+[15.473332] (kk_simulator) StdoutLine: {'line': b"writing list of installed files to '/home/kk/kk_ws/src/kk_driver_package/build/kk_simulator/install.log'\n"}
+[15.565542] (-) TimerEvent: {}
+[15.669856] (-) TimerEvent: {}
+[15.715160] (kk_simulator) CommandEnded: {'returncode': 0}
+[15.770764] (-) TimerEvent: {}
+[15.810512] (kk_simulator) JobEnded: {'identifier': 'kk_simulator', 'rc': 0}
+[15.871087] (-) TimerEvent: {}
+[15.973511] (-) TimerEvent: {}
+[16.076141] (-) TimerEvent: {}
+[16.178753] (-) TimerEvent: {}
+[16.281519] (-) TimerEvent: {}
+[16.387110] (-) TimerEvent: {}
+[16.490970] (-) TimerEvent: {}
+[16.525835] (kk_receiver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/kk_receiver', 'build', '--build-base', '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/build', 'install', '--record', '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/kk/kk_ws/src/kk_driver_package/kk_receiver', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kk', 'SSH_CLIENT': '192.168.0.165 51805 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/lib:/home/kk/kk_ws/install/kk_driver_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/kk', 'OLDPWD': '/home/kk/kk_ws', 'TERM_PROGRAM_VERSION': '1.99.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-5462c67c-5196-48ac-942a-8f8673a9317d.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/kk/kk_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'kk', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/kk/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/bin/remote-cli:/home/kk/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kk/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-fe67600511.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_simulator:/home/kk/kk_ws/install/kk_receiver:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg:/home/kk/kk_ws/install/core_camera:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver', 'SSH_CONNECTION': '192.168.0.165 51805 192.168.0.178 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/kk_simulator/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_receiver/lib/python3.10/site-packages:/home/kk/kk_ws/install/kk_driver_msg/local/lib/python3.10/dist-packages:/home/kk/kk_ws/install/core_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/kk/kk_ws/src/kk_driver_package/install/kk_driver_msg:/home/kk/kk_ws/install/kk_driver:/home/kk/kk_ws/install/kk_driver_msg'}, 'shell': False}
+[16.592742] (-) TimerEvent: {}
+[16.698260] (-) TimerEvent: {}
+[16.800743] (-) TimerEvent: {}
+[16.903262] (-) TimerEvent: {}
+[17.005978] (-) TimerEvent: {}
+[17.108532] (-) TimerEvent: {}
+[17.211136] (-) TimerEvent: {}
+[17.314441] (-) TimerEvent: {}
+[17.417055] (-) TimerEvent: {}
+[17.519413] (-) TimerEvent: {}
+[17.620889] (-) TimerEvent: {}
+[17.722696] (-) TimerEvent: {}
+[17.825261] (-) TimerEvent: {}
+[17.928065] (-) TimerEvent: {}
+[18.029733] (-) TimerEvent: {}
+[18.132336] (-) TimerEvent: {}
+[18.234730] (-) TimerEvent: {}
+[18.336109] (-) TimerEvent: {}
+[18.437729] (-) TimerEvent: {}
+[18.540331] (-) TimerEvent: {}
+[18.642927] (-) TimerEvent: {}
+[18.744249] (-) TimerEvent: {}
+[18.845446] (-) TimerEvent: {}
+[18.946343] (-) TimerEvent: {}
+[19.047682] (-) TimerEvent: {}
+[19.149035] (-) TimerEvent: {}
+[19.250383] (-) TimerEvent: {}
+[19.352328] (-) TimerEvent: {}
+[19.454371] (-) TimerEvent: {}
+[19.555707] (-) TimerEvent: {}
+[19.658080] (-) TimerEvent: {}
+[19.759451] (-) TimerEvent: {}
+[19.825088] (kk_receiver) StdoutLine: {'line': b'running egg_info\n'}
+[19.834557] (kk_receiver) StdoutLine: {'line': b'writing ../build/kk_receiver/kk_receiver.egg-info/PKG-INFO\n'}
+[19.836533] (kk_receiver) StdoutLine: {'line': b'writing dependency_links to ../build/kk_receiver/kk_receiver.egg-info/dependency_links.txt\n'}
+[19.838356] (kk_receiver) StdoutLine: {'line': b'writing entry points to ../build/kk_receiver/kk_receiver.egg-info/entry_points.txt\n'}
+[19.839880] (kk_receiver) StdoutLine: {'line': b'writing requirements to ../build/kk_receiver/kk_receiver.egg-info/requires.txt\n'}
+[19.841807] (kk_receiver) StdoutLine: {'line': b'writing top-level names to ../build/kk_receiver/kk_receiver.egg-info/top_level.txt\n'}
+[19.859746] (-) TimerEvent: {}
+[19.865487] (kk_receiver) StdoutLine: {'line': b"reading manifest file '../build/kk_receiver/kk_receiver.egg-info/SOURCES.txt'\n"}
+[19.876631] (kk_receiver) StdoutLine: {'line': b"writing manifest file '../build/kk_receiver/kk_receiver.egg-info/SOURCES.txt'\n"}
+[19.880194] (kk_receiver) StdoutLine: {'line': b'running build\n'}
+[19.883387] (kk_receiver) StdoutLine: {'line': b'running build_py\n'}
+[19.885316] (kk_receiver) StdoutLine: {'line': b'running install\n'}
+[19.892525] (kk_receiver) StdoutLine: {'line': b'running install_lib\n'}
+[19.903335] (kk_receiver) StdoutLine: {'line': b'running install_data\n'}
+[19.905016] (kk_receiver) StdoutLine: {'line': b'running install_egg_info\n'}
+[19.924377] (kk_receiver) StdoutLine: {'line': b"removing '/home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages/kk_receiver-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[19.929230] (kk_receiver) StdoutLine: {'line': b'Copying ../build/kk_receiver/kk_receiver.egg-info to /home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/python3.10/site-packages/kk_receiver-0.0.0-py3.10.egg-info\n'}
+[19.948325] (kk_receiver) StdoutLine: {'line': b'running install_scripts\n'}
+[19.960320] (-) TimerEvent: {}
+[20.062587] (-) TimerEvent: {}
+[20.164097] (-) TimerEvent: {}
+[20.187644] (kk_receiver) StdoutLine: {'line': b'Installing kk_receiver script to /home/kk/kk_ws/src/kk_driver_package/install/kk_receiver/lib/kk_receiver\n'}
+[20.199693] (kk_receiver) StdoutLine: {'line': b"writing list of installed files to '/home/kk/kk_ws/src/kk_driver_package/build/kk_receiver/install.log'\n"}
+[20.265504] (-) TimerEvent: {}
+[20.368131] (-) TimerEvent: {}
+[20.437785] (kk_receiver) CommandEnded: {'returncode': 0}
+[20.469708] (-) TimerEvent: {}
+[20.524015] (kk_receiver) JobEnded: {'identifier': 'kk_receiver', 'rc': 0}
+[20.536793] (-) EventReactorShutdown: {}
