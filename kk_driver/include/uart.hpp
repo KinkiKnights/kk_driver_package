@@ -10,7 +10,7 @@
 #include <vector>
 #include <atomic>
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 10240
 
 class UART
 {
@@ -32,7 +32,7 @@ private:
 
         // UART設定
         struct termios options;
-        options.c_cflag = B115200 | CS8 | CLOCAL | CREAD;
+        options.c_cflag = B38400 | CS8 | CLOCAL | CREAD;
         options.c_iflag = IGNPAR;
         options.c_oflag = 0;
         options.c_lflag = 0;
@@ -42,7 +42,7 @@ private:
     }
 
     void receiveLoop(){
-        uint8_t temp_buffer[256];
+        uint8_t temp_buffer[20000];
         while (running_){
             int len = read(uart_fd_, temp_buffer, sizeof(temp_buffer));
             if (len > 0){
@@ -132,7 +132,7 @@ public:
     }
 
     // コマンドパース
-    static const uint8_t TMP_NUM = 100;
+    static const uint8_t TMP_NUM = 300;
     static constexpr uint8_t DLC_IDX = 1;
     uint8_t blank_counter = 0;
     uint8_t tmp_index = 0;
@@ -144,14 +144,14 @@ public:
         uint8_t tmp_c;
         is_success = false;
         while(getByte(tmp_c)){
-            // printf("%d,", (uint8_t)tmp_c);
+            printf("%d,", (uint8_t)tmp_c);
             // 先頭文字列探索
             if (blank_counter < 2){
                 if(tmp_c == 0xF0)
                     blank_counter++;
                 else
                     blank_counter = 0;
-                // printf(": blank search:%d\n", blank_counter);
+                printf(": blank search:%d\n", blank_counter);
 
             }
             // コマンド先頭探索
@@ -164,7 +164,15 @@ public:
             }
             // コマンド処理
             else {
-                cmd_temporary[tmp_index++] = tmp_c;
+                if (tmp_index >= TMP_NUM) {
+                    // バッファオーバーフロー時の処理
+                    printf("cmd_temporary buffer overflow!\n");
+                    blank_counter = 0;
+                    tmp_index = 0;
+                    return false;
+                }
+                cmd_temporary[tmp_index] = tmp_c;
+                tmp_index++;
                 // コマンド受信中間処理
                 if (tmp_index < (cmd_temporary[DLC_IDX] + 3)){
                     check_sum += tmp_c;
@@ -176,7 +184,7 @@ public:
                         is_success = true;
                     // チェックサム異常時処理
                     else 
-                        printf("\nChecksum calc is failed(%d(calc) != %d(frame))...", check_sum, tmp_c);
+                        printf("\nChecksum calc is failed(%d(calc) != %d(frame), str[%d])...", check_sum, tmp_c, tmp_index );
                     // 初期化処理
                     printf("cmd_cmp\n");
                     if (is_success){
