@@ -51,32 +51,30 @@ private:
     kk_driver_msg::msg::Gm6020Status gm6020_feedback;
 
     const uint16_t GM6020_MAX  = 8191;
-    uint16_t gm6020_lastpos[7];
     uint32_t gm6020_ofst[7];
 
     rclcpp::TimerBase::SharedPtr timer_;
 
     void update(){
-        uint8_t frames[200];
-        bool is_success;
-        while(serial.getSerialMsg(frames, is_success)){
-            if (serial.hasOverflowed()) printf("oVER Flow!!\n");
-            if (!is_success) continue;
-            uint8_t id = frames[0];
-            // エンコーダ処理
-            printf("id :%d\n",id);
+        uint8_t* rcv_array;
+        uint8_t msg_head[200];
+        uint8_t msg_num = serial.getSerialMsg(msg_head, &rcv_array);
+        // printf("\nGet Msg(%d)",msg_num);
+        for (uint8_t msg_idx = 0; msg_idx < msg_num; msg_idx++){
+            // メッセージ先頭を格納
+            uint8_t* frame = &(rcv_array[msg_head[msg_idx]]);
+            // IDでの振り分け処理
+            uint8_t id = frame[0];
+            // printf("\nid %d:",id);
 
             if (id == GM6020FeedBack::Serial::SERIAL_ID){
-                gm6020_decoder.decode(frames);
-                for (uint8_t i = 0; i< 7; i++){
-                    if ((gm6020_lastpos[i] > GM6020_MAX/4*3) && (gm6020_decoder.fb_position[i] < GM6020_MAX/4))
-                        gm6020_ofst[i] += GM6020_MAX;
-                    if ((gm6020_decoder.fb_position[i] > GM6020_MAX/4*3) && (gm6020_lastpos[i] < GM6020_MAX/4))
-                        gm6020_ofst[i] -= GM6020_MAX;
-                    gm6020_lastpos[i] = gm6020_decoder.fb_position[i];
-                    gm6020_feedback.position[i] = gm6020_decoder.fb_position[i] + gm6020_ofst[i];
-                    gm6020_feedback.speed[i] = gm6020_decoder.fb_speed[i];
-                    gm6020_feedback.torque[i] = gm6020_decoder.fb_current[i];
+                gm6020_decoder.decode(frame);
+                for (uint8_t i = 0; i< gm6020_decoder.port_num; i++){
+                    uint8_t port = gm6020_decoder.port[i];
+                    uint8_t gm6020_ofs = gm6020_decoder.fb_posofs[i];
+                    gm6020_feedback.position[port] = gm6020_decoder.fb_position[i] + gm6020_ofs * GM6020_MAX;
+                    gm6020_feedback.speed[port] = gm6020_decoder.fb_speed[i];
+                    gm6020_feedback.torque[port] = gm6020_decoder.fb_current[i];
                 }
             }
             // if (id == EPBFeedBack::Param::SERIAL_ID) {
@@ -175,7 +173,7 @@ public:
         // c610_status_pub = this->create_publisher<kk_driver_msg::msg::C610Status>("c610/status", rclcpp::QoS(1));
 
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(10), // 0.01秒ごとに実行
+            std::chrono::milliseconds(20), // 0.01秒ごとに実行
             std::bind(&DriverNode::update, this));
     }
 

@@ -11,19 +11,66 @@
 #include <atomic>
 
 #define BUFFER_SIZE 10240
-
+#define RCV_BUFFER_SIZE 500
 class UART
 {
+private:
+    uint8_t buff_select = 0;
+    uint8_t buff_full = false;
+    bool is_writing = false;
+    // 受信バッファ
+    uint8_t* rcv_buff[2]; 
+    uint8_t buff1[RCV_BUFFER_SIZE];
+    uint8_t buff2[RCV_BUFFER_SIZE];
+    // 書き込みインデックス
+    uint8_t write_idx = 0;
+
+    void rcvLoop(){
+        uint8_t temp_buffer[500];
+        while (running_)
+        {
+            int len = read(uart_fd_, temp_buffer, sizeof(temp_buffer));
+
+            // バッファ満杯ならしばらく待機
+            if (buff_full){
+                usleep(1);
+                continue;
+            }
+
+            // バッファへの投入
+            is_writing = true;
+            for (int i = 0; i < len; i++) {
+                rcv_buff[buff_select][write_idx++] = temp_buffer[i];
+                if (write_idx < RCV_BUFFER_SIZE) continue;
+                buff_full = true;
+                break;
+            }
+            is_writing = false;
+        }
+    }
+
+    uint8_t* getNewBuff(uint8_t& len){
+        // 読み取り中なら一連の読み取りが終了するまで待機
+        while (is_writing)
+        {}
+        // 返り値保存
+        len = write_idx;
+        uint8_t last_idx = buff_select;
+        // バッファの入れ替え
+        buff_select = (buff_select + 1)%2;
+        write_idx = 0;
+        buff_full = false;
+        printf("@");
+        
+        return rcv_buff[last_idx];
+    }
+
 private:
     int uart_fd_;
     char header[2] = {0xF0, 0xF0};
     std::thread recv_thread_;
     std::mutex buffer_mutex_;
-    std::vector<uint8_t> ring_buffer_;
     std::atomic<bool> running_;
-    std::atomic<bool> buffer_overflowed_;
-    size_t buffer_head_;
-    size_t buffer_tail_;
 
     bool initUart(){
         // UARTオープン
@@ -32,43 +79,29 @@ private:
 
         // UART設定
         struct termios options;
-        options.c_cflag = B38400 | CS8 | CLOCAL | CREAD;
+        options.c_cflag = B115200 | CS8 | CLOCAL | CREAD;
         options.c_iflag = IGNPAR;
         options.c_oflag = 0;
         options.c_lflag = 0;
         tcsetattr(uart_fd_, TCSANOW, &options);
 
-        return true;
-    }
-
-    void receiveLoop(){
-        uint8_t temp_buffer[20000];
-        while (running_){
-            int len = read(uart_fd_, temp_buffer, sizeof(temp_buffer));
-            if (len > 0){
-                std::lock_guard<std::mutex> lock(buffer_mutex_);
-                for (int i = 0; i < len; i++){
-                    ring_buffer_[buffer_head_] = temp_buffer[i];
-                    buffer_head_ = (buffer_head_ + 1) % BUFFER_SIZE;
-                    if (buffer_head_ == buffer_tail_){
-                        buffer_tail_ = (buffer_tail_ + 1) % BUFFER_SIZE; // オーバーフロー時に古いデータを削除
-                        buffer_overflowed_ = true;
-                    }
-                }
-            }
-            usleep(1000); // 1msスリープ
-        }
+        return true; 
     }
 
 public:
-    UART(): ring_buffer_(BUFFER_SIZE), buffer_head_(0), buffer_tail_(0), running_(false), buffer_overflowed_(false)
+    UART(): running_(false)
     {
+        // バッファの用意
+        rcv_buff[0] = buff1;
+        rcv_buff[1] = buff2;
+
+        // UART通信を開始
         if(initUart()){
             printf("Open Serial\n");
             if (uart_fd_ == -1)
                 printf("Connect Disabel\n");
             running_ = true;
-            recv_thread_ = std::thread(&UART::receiveLoop, this);
+            recv_thread_ = std::thread(&UART::rcvLoop, this);
         }
         else
             printf("Faild Serial\n");
@@ -102,103 +135,75 @@ public:
         printf("=> CS=%d\n", checksum);
 
     }
-
-    size_t readBuffer(uint8_t* buffer, size_t max_len){
-        std::lock_guard<std::mutex> lock(buffer_mutex_);
-        size_t count = 0;
-        while (buffer_tail_ != buffer_head_ && count < max_len){
-            buffer[count++] = ring_buffer_[buffer_tail_];
-            buffer_tail_ = (buffer_tail_ + 1) % BUFFER_SIZE;
-        }
-        return count;
-    }
-
-    bool isRingBufferEmpty() const {
-        return buffer_head_ == buffer_tail_;
-    }
-
-    bool hasOverflowed() const {
-        return buffer_overflowed_;
-    }
-
-    bool getByte(uint8_t &data){
-        std::lock_guard<std::mutex> lock(buffer_mutex_);
-        if (isRingBufferEmpty()) {
-            return false; // バッファが空
-        }
-        data = ring_buffer_[buffer_tail_];
-        buffer_tail_ = (buffer_tail_ + 1) % BUFFER_SIZE;
-        return true;
-    }
-
+    
     // コマンドパース
-    static const uint8_t TMP_NUM = 300;
+    static const uint8_t TMP_NUM = 100;
     static constexpr uint8_t DLC_IDX = 1;
     uint8_t blank_counter = 0;
     uint8_t tmp_index = 0;
-    uint32_t check_sum = 0;
-    uint8_t cmd_temporary[TMP_NUM];
+    
 
-    // 返り値trueなら残あり
-    bool getSerialMsg(uint8_t* frames, bool& is_success){
+    // メッセージ先頭数を返す
+    uint8_t getSerialMsg(uint8_t* msg_heads, uint8_t** rcv_array){
+        uint8_t msg_num = 0;
         uint8_t tmp_c;
-        is_success = false;
-        while(getByte(tmp_c)){
+        // 新規メッセージの取得
+        uint8_t get_len;
+        uint8_t* rcv = getNewBuff(get_len);
+
+        for (uint16_t i = 0; i < get_len; i++){
+            // 解析文字取り出し
+            tmp_c = rcv[i];
             printf("%d,", (uint8_t)tmp_c);
-            // 先頭文字列探索
+
+            // 先頭文字探索
             if (blank_counter < 2){
                 if(tmp_c == 0xF0)
                     blank_counter++;
                 else
                     blank_counter = 0;
                 printf(": blank search:%d\n", blank_counter);
-
+                continue;
             }
-            // コマンド先頭探索
-            else if (tmp_index == 0){
-                // 初期文字列が続く場合はコマンド先頭探索
-                if (tmp_c == 0xF0) continue;
-                cmd_temporary[tmp_index++] = tmp_c;
-                check_sum = tmp_c;
-                // printf(":cmd type\n");
+            // 初期文字列が続く場合はコマンド先頭探索
+            if (tmp_c == 0xF0) continue;
+            // メッセージ先頭を記録
+            msg_heads[msg_num] = i;
+            // 範囲チェック
+            if (i + 1 >= get_len) break;; // DLCが受信範囲内か(最低限)
+            uint8_t dlc = rcv[i+1];
+            if (i + dlc + 2 >= get_len) break; // チェックサムが受信範囲内か
+            if (dlc > 80) {
+                // 異常なDLCを除外
+                blank_counter = 0;
+                continue;
             }
-            // コマンド処理
-            else {
-                if (tmp_index >= TMP_NUM) {
-                    // バッファオーバーフロー時の処理
-                    printf("cmd_temporary buffer overflow!\n");
-                    blank_counter = 0;
-                    tmp_index = 0;
-                    return false;
-                }
-                cmd_temporary[tmp_index] = tmp_c;
-                tmp_index++;
-                // コマンド受信中間処理
-                if (tmp_index < (cmd_temporary[DLC_IDX] + 3)){
-                    check_sum += tmp_c;
-                }
-                // コマンド受信完了処理
-                else {
-                    // チェックサム正常計算時
-                    if (check_sum % 0x100 == tmp_c)
-                        is_success = true;
-                    // チェックサム異常時処理
-                    else 
-                        printf("\nChecksum calc is failed(%d(calc) != %d(frame), str[%d])...", check_sum, tmp_c, tmp_index );
-                    // 初期化処理
-                    printf("cmd_cmp\n");
-                    if (is_success){
-                        for (uint8_t idx = 0; idx < tmp_index; idx++){
-                            frames[idx] = cmd_temporary[idx];
-                        }
-                    }
-                    blank_counter = 0;
-                    tmp_index = 0;
-                    return true;
-                }
+            uint8_t check_sum = rcv[i+dlc+2];
+            // チェックサムを確認
+            uint32_t sum = 0;
+            for (uint8_t sum_idx = 0; sum_idx < dlc + 2; sum_idx++){
+                sum += rcv[i + sum_idx];
+                printf("/%d",rcv[i+sum_idx]);
             }
+            // チェックサム判定
+            if (sum % 0x100 == check_sum){
+                // チェックサムが正しければ受信メッセージ数を更新
+                msg_num++;
+                printf("=(%d,%d)::success!!\n", check_sum,sum % 0x100);
+            } else {
+                printf("=(%d,%d)::fails!!\n", check_sum,sum % 0x100);
+            }
+            // iの更新(forの更新を見据えて1少なく)
+            i += (dlc + 2);
+            blank_counter = 0;
+            continue;
         }
-        return false;
+        blank_counter = 0;
+        printf("=================================\n");
+
+        // 返り値の用意
+        *rcv_array = rcv;
+        return msg_num;
     }
     
 };
