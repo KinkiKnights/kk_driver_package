@@ -23,7 +23,7 @@ private:
     uint8_t buff1[RCV_BUFFER_SIZE];
     uint8_t buff2[RCV_BUFFER_SIZE];
     // 書き込みインデックス
-    uint8_t write_idx = 0;
+    uint16_t write_idx = 0;
 
     void rcvLoop(){
         uint8_t temp_buffer[500];

@@ -51,7 +51,8 @@ private:
     kk_driver_msg::msg::Gm6020Status gm6020_feedback;
 
     const uint16_t GM6020_MAX  = 8191;
-    uint32_t gm6020_ofst[7];
+    int32_t gm6020_ofst[7];
+    int32_t last_ofst[7];
 
     rclcpp::TimerBase::SharedPtr timer_;
 
@@ -69,10 +70,18 @@ private:
 
             if (id == GM6020FeedBack::Serial::SERIAL_ID){
                 gm6020_decoder.decode(frame);
+                
                 for (uint8_t i = 0; i< gm6020_decoder.port_num; i++){
                     uint8_t port = gm6020_decoder.port[i];
                     uint8_t gm6020_ofs = gm6020_decoder.fb_posofs[i];
-                    gm6020_feedback.position[port] = gm6020_decoder.fb_position[i] + gm6020_ofs * GM6020_MAX;
+                    // オフセットの計算
+                    if ((last_ofst[port] < 0x3f) && (gm6020_ofs > 0xBf))
+                        gm6020_ofst[port] -= 1;
+                    if ((gm6020_ofs < 0x3f) && (last_ofst[port] > 0xBf))
+                        gm6020_ofst[port] += 1;
+                    last_ofst[port] = gm6020_ofs;
+                    // Publish値の設定
+                    gm6020_feedback.position[port] = gm6020_decoder.fb_position[i] + (gm6020_ofst[port] * 0x100 + gm6020_ofs) * GM6020_MAX;
                     gm6020_feedback.speed[port] = gm6020_decoder.fb_speed[i];
                     gm6020_feedback.torque[port] = gm6020_decoder.fb_current[i];
                 }
@@ -120,12 +129,30 @@ public:
     DriverNode(const std::string& name_space="", 
     const rclcpp::NodeOptions& options = rclcpp::NodeOptions())
     : Node("driver_node",name_space,options){
+        for (uint8_t i = 0; i < 7; i++){
+            last_ofst[i] = 0;
+            gm6020_ofst[i] = 0;
+        }
         
         // 制御コマンドTopicを受信するSubscriberを初期化
         pwm_cmd_sub = this->create_subscription<kk_driver_msg::msg::PwmCmd>("pwm/cmd", rclcpp::QoS(10),
             [&](const kk_driver_msg::msg::PwmCmd::SharedPtr msg){
                 pwm_encoder.port_num = msg->port.size();
+                // バリデーション
+                if (pwm_encoder.port_num != msg->target.size()){
+                    printf("PWM ポート数エラー port num:%d, target:%ld\n", pwm_encoder.port_num, msg->target.size());
+                    return;
+                }
+                if (pwm_encoder.port_num != msg->spd.size()){
+                    printf("PWM ポート数エラー port num:%d, spd:%ld\n", pwm_encoder.port_num, msg->spd.size());
+                    return;
+                }
+                
                 for (uint8_t i = 0; i < pwm_encoder.port_num; i++){
+                    if (msg->port[i] >= pwm_encoder.PORT_MAX){
+                        printf("PWM ポート指定エラー port:%d\n", msg->port[i]);
+                        continue;;
+                    }
                     pwm_encoder.port[i] = msg->port[i];
                     pwm_encoder.pos[i] = msg->target[i];
                     pwm_encoder.spd[i] = msg->spd[i];
@@ -137,8 +164,18 @@ public:
         motor_cmd_sub = this->create_subscription<kk_driver_msg::msg::MotorCmd>("mtr/cmd", rclcpp::QoS(10),
             [&](const kk_driver_msg::msg::MotorCmd::SharedPtr msg){
                 uint8_t port_num = msg->port.size();
+                // バリデーション
+                if (port_num != msg->duty.size()){
+                    printf("DCモータ ポート数エラー port num:%d, duty:%ld\n", port_num, msg->duty.size());
+                    return;
+                }
+
                 motor_encoder.port_num = port_num;
                 for (uint8_t i = 0; i < port_num; i++){
+                    if (msg->port[i] >= motor_encoder.PORT_MAX){
+                        printf("DCモータ ポート指定エラー port:%d\n", msg->port[i]);
+                        continue;;
+                    }
                     float duty = msg->duty[i];
                     if (duty>0.99f) duty = 0.99f;
                     if (duty<-0.99f) duty = -0.99f;
@@ -152,8 +189,17 @@ public:
         gm6020_cmd_sub =  this->create_subscription<kk_driver_msg::msg::Gm6020Cmd>("gm6020/cmd", rclcpp::QoS(10),
             [&](const kk_driver_msg::msg::Gm6020Cmd::SharedPtr msg){
                 uint8_t port_num = msg->motor_id.size();
+                // バリデーション
+                if (port_num != msg->duty.size()){
+                    printf("GM6020 ポート数エラー port num:%d, duty:%ld\n", port_num, msg->duty.size());
+                    return;
+                }
                 gm6020_encoder.port_num = port_num;
                 for (uint8_t i = 0; i < port_num; i++){
+                    if (msg->motor_id[i] < 1 || msg->motor_id[i] > 7){
+                        printf("GM6020 ID指定エラー port:%d\n", msg->motor_id[i]);
+                        continue;;
+                    }
                     float duty = msg->duty[i];
                     if (duty>0.99f) duty = 0.99f;
                     if (duty<-0.99f) duty = -0.99f;
